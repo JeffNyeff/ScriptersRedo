@@ -39,7 +39,7 @@ namespace SCRIPTERS.Core.Models.Operation
 
         public decimal Total { get; set; }
 
-        [Display(Name = "Amount Tendered")]
+        [Display(Name = "Amount Due")]
         public decimal DueAmount { get; set; }
 
         public virtual List<PurchaseDetail> PurchaseDetail { get; set; }

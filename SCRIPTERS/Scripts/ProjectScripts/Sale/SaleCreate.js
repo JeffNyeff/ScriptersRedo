@@ -1,15 +1,57 @@
-﻿$(document).ready(function () {
+﻿///<reference path="~/Theme/bower_components/jquery/dist/jquery.min.js" />
+
+$(document).ready(function () {
     $("#SaleDate").datepicker({
         autoclose: true
     });
 
+    var left = 0;
     $("#AddButton").click(function () {
 
-        CreateRowForSale();
-        $("#ItemName").val("");
-        $("#Quantity").val("");
-        $("#ItemPrice").val("");
-        $("#Stock").val("");
+        var itemName = $("#ItemName").val();
+        var quantity = $("#Quantity").val();
+        var stock = $("#Stock").val();
+        left = quantity - stock;
+        // alert(costPrice);
+        if (itemName == "" || quantity == "" || left > 0) {
+
+
+            //validation to check if quantity is higher than stock
+            if (left > 0) {
+                $(".message_box").html(
+                    '<span style="color:red;">Error! quantity is higher than stock available. </span>'
+                );
+                $("#AddButton").hide();
+                $(".message_box").show();
+
+            }
+            //input validation
+            if (quantity == "") {
+                $(".message_box").html(
+                    '<span style="color:red;">Please provide quantity </span>'
+                );
+                $(".message_box").show();
+                $("#ItemQuantity").focus();
+            }
+            if (itemName === "") {
+                $(".message_box").html(
+                    '<span style="color:red;">Select Item  to proceed </span>'
+                );
+                $(".message_box").show();
+                $("#ItemName").focus();
+            }
+        }
+        else {
+            $(".message_box").hide();
+            CreateRowForSale();
+            $("#ItemName").val("");
+            $("#Quantity").val("");
+            $("#ItemPrice").val("");
+            $("#Stock").val("");
+        }
+
+
+       
 
     });
 

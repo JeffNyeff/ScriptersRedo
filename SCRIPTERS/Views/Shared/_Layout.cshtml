@@ -88,6 +88,76 @@
                         </ul>
                     </li>
 
+                    <li class="header">OPERATION MODULE</li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-circle-o text-aqua"></i> <span>Purchases</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="@Url.Action("Create","Purchases")"><i class="fa fa-circle-o"></i> Make Purchase</a></li>
+                            <li><a href="@Url.Action("List","Purchases")"><i class="fa fa-circle-o"></i>Purchase History</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-circle-o text-aqua"></i> <span>Book Sales</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="@Url.Action("Create","Sales")"><i class="fa fa-circle-o"></i> Make Book Sale</a></li>
+                            <li><a href="@Url.Action("List","Sales")"><i class="fa fa-circle-o"></i> Book Sale History</a></li>
+                        </ul>
+
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-circle-o text-aqua"></i> <span>Inventory Sale</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="@Url.Action("Create","InventorySales")"><i class="fa fa-circle-o"></i>Make Inventory Sale</a></li>
+                            <li><a href="@Url.Action("List","InventorySales")"><i class="fa fa-circle-o"></i>Inventory Sale History</a></li>
+                        </ul>
+
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-circle-o text-aqua"></i> <span>Orders</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="@Url.Action("Create","Orders")"><i class="fa fa-circle-o"></i> Place Order</a></li>
+                            <li><a href="@Url.Action("List","Orders")"><i class="fa fa-circle-o"></i> List Of Orders</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-circle-o text-aqua"></i> <span>Expense</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="@Url.Action("Create","Expenses")"><i class="fa fa-circle-o"></i> Add Expense</a></li>
+                            <li><a href="@Url.Action("List","Expenses")"><i class="fa fa-circle-o"></i> List Of Expenses</a></li>
+                        </ul>
+                    </li>
+
+
                     <li class="header">Communications MODULE</li>
 
                     <li class="treeview">
@@ -171,6 +241,7 @@
                         <ul class="treeview-menu">
                             <li><a href="@Url.Action("Create","Books")"><i class="fa fa-circle-o"></i> Add Book</a></li>
                             <li><a href="@Url.Action("List","Books")"><i class="fa fa-circle-o"></i> List Of Books</a></li>
+                            <li><a href="@Url.Action("StockReport","Reports")"><i class="fa fa-circle-o"></i>Book Stock</a></li>
                         </ul>
                     </li>
 
@@ -180,38 +251,38 @@
 
                     @* inventory Management *@
 
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-circle-o text-aqua"></i> <span>Inventory</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="@Url.Action("Create","Inventory")"><i class="fa fa-circle-o"></i> Add Inventory</a></li>
-                        <li><a href="@Url.Action("List","Inventory")"><i class="fa fa-circle-o"></i> List Of Inventory</a></li>
-                    </ul>
-                </li>
-                
-                
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-circle-o text-aqua"></i> <span>Expense</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="@Url.Action("Create","ExpenseItems")"><i class="fa fa-circle-o"></i> Add Expense</a></li>
-                        <li><a href="@Url.Action("List","ExpenseItems")"><i class="fa fa-circle-o"></i> List of Expenses</a></li>
-                    </ul>
-                </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-circle-o text-aqua"></i> <span>Inventory</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="@Url.Action("Create","Inventory")"><i class="fa fa-circle-o"></i> Add Inventory</a></li>
+                            <li><a href="@Url.Action("List","Inventory")"><i class="fa fa-circle-o"></i> List Of Inventory</a></li>
+                        </ul>
+                    </li>
 
 
-                <li class="header">Human Resources</li>
-                  
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-circle-o text-aqua"></i> <span>Expense</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="@Url.Action("Create","ExpenseItems")"><i class="fa fa-circle-o"></i> Add Expense</a></li>
+                            <li><a href="@Url.Action("List","ExpenseItems")"><i class="fa fa-circle-o"></i> List of Expenses</a></li>
+                        </ul>
+                    </li>
 
-                 
+
+                    <li class="header">Human Resources</li>
+
+
+
 
 
 
@@ -239,23 +310,23 @@
                             <li><a href="@Url.Action("Index","Roles")"><i class="fa fa-circle-o"></i> Manage Roles</a></li>
                         </ul>
                     </li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-circle-o text-aqua"></i> <span>Employee</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="@Url.Action("Create","Employees")"><i class="fa fa-circle-o"></i> Add Employee</a></li>
-                        <li><a href="@Url.Action("List","Employees")"><i class="fa fa-circle-o"></i> List Of Employees</a></li>
-                    </ul>
-                </li>
-                
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-circle-o text-aqua"></i> <span>Employee</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="@Url.Action("Create","Employees")"><i class="fa fa-circle-o"></i> Add Employee</a></li>
+                            <li><a href="@Url.Action("List","Employees")"><i class="fa fa-circle-o"></i> List Of Employees</a></li>
+                        </ul>
+                    </li>
 
 
 
-                <li class="header">Manage </li>
+
+                    <li class="header">Manage </li>
                     <li class="treeview">
                         <a href="#">
                             <i class="fa fa-circle-o text-aqua"></i> <span>Supplier</span>
@@ -273,102 +344,32 @@
 
 
 
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-circle-o text-aqua"></i> <span>Customer</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="@Url.Action("Create","Customers")"><i class="fa fa-circle-o"></i> Add Customer</a></li>
-                        <li><a href="@Url.Action("List","Customers")"><i class="fa fa-circle-o"></i> List of Customers</a></li>
-                    </ul>
-                </li>
-                
-                
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-circle-o text-aqua"></i> <span>Business Rules</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="@Url.Action("Index","BusinessRules")"><i class="fa fa-circle-o"></i> Manage</a></li>
-                       
-                    </ul>
-                </li>
-
-
-
-
-
-                <li class="header">OPERATION MODULE</li>
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-circle-o text-aqua"></i> <span>Expense</span>
+                            <i class="fa fa-circle-o text-aqua"></i> <span>Customer</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="@Url.Action("Create","Expenses")"><i class="fa fa-circle-o"></i> Add Expense</a></li>
-                            <li><a href="@Url.Action("List","Expenses")"><i class="fa fa-circle-o"></i> List Of Expenses</a></li>
+                            <li><a href="@Url.Action("Create","Customers")"><i class="fa fa-circle-o"></i> Add Customer</a></li>
+                            <li><a href="@Url.Action("List","Customers")"><i class="fa fa-circle-o"></i> List of Customers</a></li>
                         </ul>
                     </li>
+
+
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-circle-o text-aqua"></i> <span>Purchase</span>
+                            <i class="fa fa-circle-o text-aqua"></i> <span>Business Rules</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="@Url.Action("Create","Purchases")"><i class="fa fa-circle-o"></i> Add Purchase</a></li>
-                            <li><a href="@Url.Action("List","Purchases")"><i class="fa fa-circle-o"></i> List Of Purchase</a></li>
+                            <li><a href="@Url.Action("Index","BusinessRules")"><i class="fa fa-circle-o"></i> Manage</a></li>
+
                         </ul>
                     </li>
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-circle-o text-aqua"></i> <span>Order</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="@Url.Action("Create","Orders")"><i class="fa fa-circle-o"></i> Add Order</a></li>
-                            <li><a href="@Url.Action("List","Orders")"><i class="fa fa-circle-o"></i> List Of Orders</a></li>
-                        </ul>
-                    </li>
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-circle-o text-aqua"></i> <span>Book Sale</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="@Url.Action("Create","Sales")"><i class="fa fa-circle-o"></i> Add Book Sale</a></li>
-                            <li><a href="@Url.Action("List","Sales")"><i class="fa fa-circle-o"></i> List of Book Sales</a></li>
-                        </ul>
-
-                    </li>
-
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-circle-o text-aqua"></i> <span>Inventory Sale</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="@Url.Action("Create","InventorySales")"><i class="fa fa-circle-o"></i> Add Inventory Sale</a></li>
-                            <li><a href="@Url.Action("List","InventorySales")"><i class="fa fa-circle-o"></i> List of Inventory Sales</a></li>
-                        </ul>
-
-                    </li>
-
 
 
                     <li class="header">REPORT MODULE</li>
@@ -416,7 +417,7 @@
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="@Url.Action("StockReport","Reports")"><i class="fa fa-circle-o"></i>Book Stock Report</a></li>
+                            
                             <li><a href="@Url.Action("StockReport","InventoryReports")"><i class="fa fa-circle-o"></i>Inventory Stock Report</a></li>
                         </ul>
                     </li>
@@ -433,286 +434,286 @@
                             <li><a href="@Url.Action("Index","AuditTrail")"><i class="fa fa-circle-o"></i>View Audit Trail</a></li>
 
 
-                    @*<li class="treeview">
-                                    <a href="#">
-                                        <i class="fa fa-files-o"></i>
-                                        <span>Layout Options</span>
-                                        <span class="pull-right-container">
-                                            <span class="label label-primary pull-right">4</span>
-                                        </span>
-                                    </a>
-                                    <ul class="treeview-menu">
-                            <li><a href="~/Theme/pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-                            <li><a href="~/Theme/pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-                            <li><a href="~/Theme/pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-                            <li><a href="~/Theme/pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
-                        </ul>
-                                </li>
-                                <li>
-                                    <a href="../widgets.html">
-                                        <i class="fa fa-th"></i> <span>Widgets</span>
-                                        <span class="pull-right-container">
-                                            <small class="label pull-right bg-green">Hot</small>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li class="treeview">
-                                    <a href="#">
-                                        <i class="fa fa-pie-chart"></i>
-                                        <span>Charts</span>
-                                        <span class="pull-right-container">
-                                            <i class="fa fa-angle-left pull-right"></i>
-                                        </span>
-                                    </a>
-                                    <ul class="treeview-menu">
-                            <li><a href="~/Theme/pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-                            <li><a href="~/Theme/pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
-                            <li><a href="~/Theme/pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-                            <li><a href="~/Theme/pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
-                        </ul>
-                                </li>
-                                <li class="treeview">
-                                    <a href="#">
-                                        <i class="fa fa-laptop"></i>
-                                        <span>UI Elements</span>
-                                        <span class="pull-right-container">
-                                            <i class="fa fa-angle-left pull-right"></i>
-                                        </span>
-                                    </a>
-                                    <ul class="treeview-menu">
-                            <li><a href="~/Theme/pages/UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
-                            <li><a href="~/Theme/pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
-                            <li><a href="~/Theme/pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
-                            <li><a href="~/Theme/pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
-                            <li><a href="~/Theme/pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
-                            <li><a href="~/Theme/pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
-                        </ul>
-                                </li>
-                                <li class="treeview">
-                                    <a href="#">
-                                        <i class="fa fa-edit"></i> <span>Forms</span>
-                                        <span class="pull-right-container">
-                                            <i class="fa fa-angle-left pull-right"></i>
-                                        </span>
-                                    </a>
-                                    <ul class="treeview-menu">
-                            <li><a href="~/Theme/pages/forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
-                            <li><a href="~/Theme/pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
-                            <li><a href="~/Theme/pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
-                        </ul>
-                                </li>
-                                <li class="treeview">
-                                    <a href="#">
-                                        <i class="fa fa-table"></i> <span>Tables</span>
-                                        <span class="pull-right-container">
-                                            <i class="fa fa-angle-left pull-right"></i>
-                                        </span>
-                                    </a>
-                                    <ul class="treeview-menu">
-                            <li><a href="~/Theme/pages/tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
-                            <li><a href="~/Theme/pages/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
-                        </ul>
-                                </li>
-                                <li>
-                                    <a href="../calendar.html">
-                                        <i class="fa fa-calendar"></i> <span>Calendar</span>
-                                        <span class="pull-right-container">
-                                            <small class="label pull-right bg-red">3</small>
-                                            <small class="label pull-right bg-blue">17</small>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../mailbox/mailbox.html">
-                                        <i class="fa fa-envelope"></i> <span>Mailbox</span>
-                                        <span class="pull-right-container">
-                                            <small class="label pull-right bg-yellow">12</small>
-                                            <small class="label pull-right bg-green">16</small>
-                                            <small class="label pull-right bg-red">5</small>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li class="treeview active">
-                                    <a href="#">
-                                        <i class="fa fa-folder"></i> <span>Examples</span>
-                                        <span class="pull-right-container">
-                                            <i class="fa fa-angle-left pull-right"></i>
-                                        </span>
-                                    </a>
-                                    <ul class="treeview-menu">
-                            <li><a href="invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
-                            <li><a href="profile.html"><i class="fa fa-circle-o"></i> Profile</a></li>
-                            <li><a href="login.html"><i class="fa fa-circle-o"></i> Login</a></li>
-                            <li><a href="register.html"><i class="fa fa-circle-o"></i> Register</a></li>
-                            <li><a href="lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
-                            <li><a href="404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
-                            <li><a href="500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
-                            <li class="active"><a href="blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
-                            <li><a href="pace.html"><i class="fa fa-circle-o"></i> Pace Page</a></li>
+                            @*<li class="treeview">
+                                            <a href="#">
+                                                <i class="fa fa-files-o"></i>
+                                                <span>Layout Options</span>
+                                                <span class="pull-right-container">
+                                                    <span class="label label-primary pull-right">4</span>
+                                                </span>
+                                            </a>
+                                            <ul class="treeview-menu">
+                                    <li><a href="~/Theme/pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
+                                    <li><a href="~/Theme/pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
+                                    <li><a href="~/Theme/pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
+                                    <li><a href="~/Theme/pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+                                </ul>
+                                        </li>
+                                        <li>
+                                            <a href="../widgets.html">
+                                                <i class="fa fa-th"></i> <span>Widgets</span>
+                                                <span class="pull-right-container">
+                                                    <small class="label pull-right bg-green">Hot</small>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="treeview">
+                                            <a href="#">
+                                                <i class="fa fa-pie-chart"></i>
+                                                <span>Charts</span>
+                                                <span class="pull-right-container">
+                                                    <i class="fa fa-angle-left pull-right"></i>
+                                                </span>
+                                            </a>
+                                            <ul class="treeview-menu">
+                                    <li><a href="~/Theme/pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
+                                    <li><a href="~/Theme/pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
+                                    <li><a href="~/Theme/pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
+                                    <li><a href="~/Theme/pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+                                </ul>
+                                        </li>
+                                        <li class="treeview">
+                                            <a href="#">
+                                                <i class="fa fa-laptop"></i>
+                                                <span>UI Elements</span>
+                                                <span class="pull-right-container">
+                                                    <i class="fa fa-angle-left pull-right"></i>
+                                                </span>
+                                            </a>
+                                            <ul class="treeview-menu">
+                                    <li><a href="~/Theme/pages/UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
+                                    <li><a href="~/Theme/pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
+                                    <li><a href="~/Theme/pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
+                                    <li><a href="~/Theme/pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
+                                    <li><a href="~/Theme/pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
+                                    <li><a href="~/Theme/pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
+                                </ul>
+                                        </li>
+                                        <li class="treeview">
+                                            <a href="#">
+                                                <i class="fa fa-edit"></i> <span>Forms</span>
+                                                <span class="pull-right-container">
+                                                    <i class="fa fa-angle-left pull-right"></i>
+                                                </span>
+                                            </a>
+                                            <ul class="treeview-menu">
+                                    <li><a href="~/Theme/pages/forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
+                                    <li><a href="~/Theme/pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
+                                    <li><a href="~/Theme/pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
+                                </ul>
+                                        </li>
+                                        <li class="treeview">
+                                            <a href="#">
+                                                <i class="fa fa-table"></i> <span>Tables</span>
+                                                <span class="pull-right-container">
+                                                    <i class="fa fa-angle-left pull-right"></i>
+                                                </span>
+                                            </a>
+                                            <ul class="treeview-menu">
+                                    <li><a href="~/Theme/pages/tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
+                                    <li><a href="~/Theme/pages/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
+                                </ul>
+                                        </li>
+                                        <li>
+                                            <a href="../calendar.html">
+                                                <i class="fa fa-calendar"></i> <span>Calendar</span>
+                                                <span class="pull-right-container">
+                                                    <small class="label pull-right bg-red">3</small>
+                                                    <small class="label pull-right bg-blue">17</small>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="../mailbox/mailbox.html">
+                                                <i class="fa fa-envelope"></i> <span>Mailbox</span>
+                                                <span class="pull-right-container">
+                                                    <small class="label pull-right bg-yellow">12</small>
+                                                    <small class="label pull-right bg-green">16</small>
+                                                    <small class="label pull-right bg-red">5</small>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="treeview active">
+                                            <a href="#">
+                                                <i class="fa fa-folder"></i> <span>Examples</span>
+                                                <span class="pull-right-container">
+                                                    <i class="fa fa-angle-left pull-right"></i>
+                                                </span>
+                                            </a>
+                                            <ul class="treeview-menu">
+                                    <li><a href="invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
+                                    <li><a href="profile.html"><i class="fa fa-circle-o"></i> Profile</a></li>
+                                    <li><a href="login.html"><i class="fa fa-circle-o"></i> Login</a></li>
+                                    <li><a href="register.html"><i class="fa fa-circle-o"></i> Register</a></li>
+                                    <li><a href="lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
+                                    <li><a href="404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
+                                    <li><a href="500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
+                                    <li class="active"><a href="blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
+                                    <li><a href="pace.html"><i class="fa fa-circle-o"></i> Pace Page</a></li>
 
-                        </ul>
-                    </li>
+                                </ul>
+                            </li>
 
-                    @*<li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-files-o"></i>
-                        <span>Layout Options</span>
-                        <span class="pull-right-container">
-                            <span class="label label-primary pull-right">4</span>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-            <li><a href="~/Theme/pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-            <li><a href="~/Theme/pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-            <li><a href="~/Theme/pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-            <li><a href="~/Theme/pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
-        </ul>
-                </li>
-                <li>
-                    <a href="../widgets.html">
-                        <i class="fa fa-th"></i> <span>Widgets</span>
-                        <span class="pull-right-container">
-                            <small class="label pull-right bg-green">Hot</small>
-                        </span>
-                    </a>
-                </li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-pie-chart"></i>
-                        <span>Charts</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-            <li><a href="~/Theme/pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-            <li><a href="~/Theme/pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
-            <li><a href="~/Theme/pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-            <li><a href="~/Theme/pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
-        </ul>
-                </li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-laptop"></i>
-                        <span>UI Elements</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-            <li><a href="~/Theme/pages/UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
-            <li><a href="~/Theme/pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
-            <li><a href="~/Theme/pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
-            <li><a href="~/Theme/pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
-            <li><a href="~/Theme/pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
-            <li><a href="~/Theme/pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
-        </ul>
-                </li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-edit"></i> <span>Forms</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-            <li><a href="~/Theme/pages/forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
-            <li><a href="~/Theme/pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
-            <li><a href="~/Theme/pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
-        </ul>
-                </li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-table"></i> <span>Tables</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-            <li><a href="~/Theme/pages/tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
-            <li><a href="~/Theme/pages/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
-        </ul>
-                </li>
-                <li>
-                    <a href="../calendar.html">
-                        <i class="fa fa-calendar"></i> <span>Calendar</span>
-                        <span class="pull-right-container">
-                            <small class="label pull-right bg-red">3</small>
-                            <small class="label pull-right bg-blue">17</small>
-                        </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="../mailbox/mailbox.html">
-                        <i class="fa fa-envelope"></i> <span>Mailbox</span>
-                        <span class="pull-right-container">
-                            <small class="label pull-right bg-yellow">12</small>
-                            <small class="label pull-right bg-green">16</small>
-                            <small class="label pull-right bg-red">5</small>
-                        </span>
-                    </a>
-                </li>
-                <li class="treeview active">
-                    <a href="#">
-                        <i class="fa fa-folder"></i> <span>Examples</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-            <li><a href="invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
-            <li><a href="profile.html"><i class="fa fa-circle-o"></i> Profile</a></li>
-            <li><a href="login.html"><i class="fa fa-circle-o"></i> Login</a></li>
-            <li><a href="register.html"><i class="fa fa-circle-o"></i> Register</a></li>
-            <li><a href="lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
-            <li><a href="404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
-            <li><a href="500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
-            <li class="active"><a href="blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
-            <li><a href="pace.html"><i class="fa fa-circle-o"></i> Pace Page</a></li>
-        </ul>
-                </li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-share"></i> <span>Multilevel</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+                            @*<li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-files-o"></i>
+                                <span>Layout Options</span>
+                                <span class="pull-right-container">
+                                    <span class="label label-primary pull-right">4</span>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                    <li><a href="~/Theme/pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
+                    <li><a href="~/Theme/pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
+                    <li><a href="~/Theme/pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
+                    <li><a href="~/Theme/pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+                </ul>
+                        </li>
+                        <li>
+                            <a href="../widgets.html">
+                                <i class="fa fa-th"></i> <span>Widgets</span>
+                                <span class="pull-right-container">
+                                    <small class="label pull-right bg-green">Hot</small>
+                                </span>
+                            </a>
+                        </li>
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-circle-o"></i> Level One
+                                <i class="fa fa-pie-chart"></i>
+                                <span>Charts</span>
                                 <span class="pull-right-container">
                                     <i class="fa fa-angle-left pull-right"></i>
                                 </span>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
+                    <li><a href="~/Theme/pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
+                    <li><a href="~/Theme/pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
+                    <li><a href="~/Theme/pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
+                    <li><a href="~/Theme/pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+                </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-laptop"></i>
+                                <span>UI Elements</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                    <li><a href="~/Theme/pages/UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
+                    <li><a href="~/Theme/pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
+                    <li><a href="~/Theme/pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
+                    <li><a href="~/Theme/pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
+                    <li><a href="~/Theme/pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
+                    <li><a href="~/Theme/pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
+                </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-edit"></i> <span>Forms</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                    <li><a href="~/Theme/pages/forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
+                    <li><a href="~/Theme/pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
+                    <li><a href="~/Theme/pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
+                </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-table"></i> <span>Tables</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                    <li><a href="~/Theme/pages/tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
+                    <li><a href="~/Theme/pages/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
+                </ul>
+                        </li>
+                        <li>
+                            <a href="../calendar.html">
+                                <i class="fa fa-calendar"></i> <span>Calendar</span>
+                                <span class="pull-right-container">
+                                    <small class="label pull-right bg-red">3</small>
+                                    <small class="label pull-right bg-blue">17</small>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../mailbox/mailbox.html">
+                                <i class="fa fa-envelope"></i> <span>Mailbox</span>
+                                <span class="pull-right-container">
+                                    <small class="label pull-right bg-yellow">12</small>
+                                    <small class="label pull-right bg-green">16</small>
+                                    <small class="label pull-right bg-red">5</small>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="treeview active">
+                            <a href="#">
+                                <i class="fa fa-folder"></i> <span>Examples</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                    <li><a href="invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
+                    <li><a href="profile.html"><i class="fa fa-circle-o"></i> Profile</a></li>
+                    <li><a href="login.html"><i class="fa fa-circle-o"></i> Login</a></li>
+                    <li><a href="register.html"><i class="fa fa-circle-o"></i> Register</a></li>
+                    <li><a href="lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
+                    <li><a href="404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
+                    <li><a href="500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
+                    <li class="active"><a href="blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
+                    <li><a href="pace.html"><i class="fa fa-circle-o"></i> Pace Page</a></li>
+                </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-share"></i> <span>Multilevel</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
                                 <li class="treeview">
                                     <a href="#">
-                                        <i class="fa fa-circle-o"></i> Level Two
+                                        <i class="fa fa-circle-o"></i> Level One
                                         <span class="pull-right-container">
                                             <i class="fa fa-angle-left pull-right"></i>
                                         </span>
                                     </a>
                                     <ul class="treeview-menu">
-                                        <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                                        <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+                                        <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
+                                        <li class="treeview">
+                                            <a href="#">
+                                                <i class="fa fa-circle-o"></i> Level Two
+                                                <span class="pull-right-container">
+                                                    <i class="fa fa-angle-left pull-right"></i>
+                                                </span>
+                                            </a>
+                                            <ul class="treeview-menu">
+                                                <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+                                                <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
                             </ul>
-                        </li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-                    </ul>
-                </li>*@
-                    @*<li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
-        <li class="header">LABELS</li>
-        <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>*@
-                </ul>
-            </section>
+                        </li>*@
+                            @*<li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
+                <li class="header">LABELS</li>
+                <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
+                <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
+                <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>*@
+                        </ul>
+</section>
             <!-- /.sidebar -->
         </aside>
         <!-- =============================================== -->

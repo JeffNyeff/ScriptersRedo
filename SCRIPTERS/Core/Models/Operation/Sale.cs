@@ -32,7 +32,7 @@ namespace SCRIPTERS.Core.Models.Operation
         public DateTime SaleDate { get; set; }
 
         [Required]
-        [Display(Name = "Customer Contract")]
+        [Display(Name = "Customer Phone Number")]
         public string CusContractNo { get; set; }
 
         [Required]

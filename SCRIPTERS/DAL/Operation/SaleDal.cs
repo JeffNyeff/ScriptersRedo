@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web.Mvc;
+using SCRIPTERS.Controllers;
 using SCRIPTERS.Core.Models;
 using SCRIPTERS.Core.Models.Operation;
 using SCRIPTERS.Models;
@@ -67,7 +68,7 @@ namespace SCRIPTERS.DAL.Operation
             transaction = new Audit();
             transaction.TransactionDate = DateTime.Now.Date;
             transaction.TransactionTime = DateTime.Now;
-            transaction.User = "User";
+            transaction.User = AccountController.login.Email;
             transaction.TransactionType = "Modified Book Sale transaction" + " " + sale.Outlet;
             transaction.TransactionDetails = sale.SaleNumber;
             _db.Audits.Add(transaction);
@@ -95,7 +96,7 @@ namespace SCRIPTERS.DAL.Operation
                 transaction = new Audit();
                 transaction.TransactionDate = DateTime.Now.Date;
                 transaction.TransactionTime = DateTime.Now;
-                transaction.User = "User";
+                transaction.User = AccountController.login.Email;
                 transaction.TransactionType = "Deleted Book Sale transaction" + " " + SaleById.Outlet;
                 transaction.TransactionDetails = SaleById.SaleNumber;
                 _db.Audits.Add(transaction);
@@ -108,17 +109,21 @@ namespace SCRIPTERS.DAL.Operation
             }
             return _status;
         }
-
+        /* var user =purchase.EmployeeId.ToString();
+            user = AccountController.login.Email;*/
         internal int Create(Sale sale)
         {
-            sale.EmployeeId = 1;  // removed employee fields on form, If there's still time I will find a way to use currently logged in user
+            var firstEmploeeId = _db.Employees.FirstOrDefault().Id;
+            sale.EmployeeId = firstEmploeeId;
+            
             sale.Discount = 0;
             transaction = new Audit();
             transaction.TransactionDate = DateTime.Now.Date;
             transaction.TransactionTime = DateTime.Now;
-            transaction.User = "User";
+            transaction.User = AccountController.login.Email;
             transaction.TransactionType = "Created Book Sale transaction" + " " + sale.Outlet;
             transaction.TransactionDetails = sale.SaleNumber;
+            sale.SaleDate = DateTime.Now;
             _db.Audits.Add(transaction);
             _db.Sales.Add(sale);
             int rowAffected = _db.SaveChanges();

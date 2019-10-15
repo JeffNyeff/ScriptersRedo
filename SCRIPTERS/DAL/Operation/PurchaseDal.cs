@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web.Mvc;
+using SCRIPTERS.Controllers;
 using SCRIPTERS.Core.Models;
 using SCRIPTERS.Core.Models.Operation;
 using SCRIPTERS.Models;
@@ -72,7 +73,7 @@ namespace SCRIPTERS.DAL.Operation
             transaction = new Audit();
             transaction.TransactionDate = DateTime.Now.Date;
             transaction.TransactionTime = DateTime.Now;
-            transaction.User = "User";
+            transaction.User = AccountController.login.Email;
             transaction.TransactionType = "Modified Purchase transaction" + " " + purchase.SupplierId;
             transaction.TransactionDetails = purchase.PurchaseNumber;
             _db.Audits.Add(transaction);
@@ -113,7 +114,7 @@ namespace SCRIPTERS.DAL.Operation
                 transaction = new Audit();
                 transaction.TransactionDate = DateTime.Now.Date;
                 transaction.TransactionTime = DateTime.Now;
-                transaction.User = "User";
+                transaction.User = AccountController.login.Email;
                 transaction.TransactionType = "Deleted Purchase transaction" + " " + purchaseById.PurchaseNumber;
                 transaction.TransactionDetails = purchaseById.PurchaseNumber;
                 _db.Audits.Add(transaction);
@@ -130,14 +131,16 @@ namespace SCRIPTERS.DAL.Operation
         internal int Create(Purchase purchase)
         {
             var firstEmploeeId = _db.Employees.FirstOrDefault().Id;
-            purchase.EmployeeId = firstEmploeeId; // Set default employee to the first employee, 
+             purchase.EmployeeId = firstEmploeeId; // Set default employee to the first employee, */
+           
 
             transaction = new Audit();
             transaction.TransactionDate = DateTime.Now.Date;
             transaction.TransactionTime = DateTime.Now;
-            transaction.User = "User";
+            transaction.User = AccountController.login.Email;
             transaction.TransactionType = "Created Purchase transaction" + " " + purchase.PurchaseNumber;
             transaction.TransactionDetails = purchase.PurchaseNumber;
+            purchase.PurchaseDate = DateTime.Now;
             _db.Audits.Add(transaction);
             _db.Purchases.Add(purchase);
             int rowAffected = _db.SaveChanges();

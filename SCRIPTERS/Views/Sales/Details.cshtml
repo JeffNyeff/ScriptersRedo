@@ -18,8 +18,8 @@
         <div class="col-md-11">
             <table>
                 <tr>
-                    <td><h4>Sales Result</h4></td>
-                    <td>&nbsp; @Html.ActionLink("Download Pdf", "ExportPdf", "Sales", new { id = Model.Id }, new { @class = "btn btn-info btn-sm", target = "_blank" }) </td>
+                    <td><h4>Sale Details</h4></td>
+                    <td>&nbsp; @Html.ActionLink("Generate Receipt", "ExportPdf", "Sales", new { id = Model.Id }, new { @class = "btn btn-info btn-sm", target = "_blank" }) </td>
                 </tr>
             </table>
             <hr />
@@ -66,7 +66,7 @@
                 </dd>
             </dl>
             <div class="col-md-12">
-                <h4>Item Details</h4>
+                <h4>Sale Details</h4>
                 <table class="table table-bordered table-responsive table-hover table-striped table-condensed table">
                     <tr style="background-color:cornflowerblue; color:white">
                         <th>Sl</th>
@@ -137,7 +137,7 @@
     </div>
 </div>
 <div class="col-md-offset-8 col-md-4">
-    @Html.ActionLink("Create New", "Create", "Sales", new { @class = "btn btn-primary" })
-    @Html.ActionLink("Back to List", "List", "Sales", new { @Class = "btn btn-primary" })
+    @Html.ActionLink("Make a new sale", "Create", "Sales", new { @class = "btn btn-primary" })
+    @Html.ActionLink("View Sale History", "List", "Sales", new { @Class = "btn btn-primary" })
    @* @Html.ActionLink("Go to Reports", "SalesReport", "Reports", null, new { @Class = "btn btn-info" })*@
 </div>

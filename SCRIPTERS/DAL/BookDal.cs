@@ -4,7 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web.Mvc;
-
+using SCRIPTERS.Controllers;
 using SCRIPTERS.Core.Models;
 using SCRIPTERS.Models;
 
@@ -61,7 +61,7 @@ namespace SCRIPTERS.DAL
             transaction = new Audit();
             transaction.TransactionDate = DateTime.Now.Date;
             transaction.TransactionTime = DateTime.Now;
-            transaction.User = "User";
+            transaction.User = AccountController.login.Email;
             transaction.TransactionType = "Modified Book";
             transaction.TransactionDetails = book.Name;
             db.Audits.Add(transaction);
@@ -83,7 +83,7 @@ namespace SCRIPTERS.DAL
                 transaction = new Audit();
                 transaction.TransactionDate = DateTime.Now.Date;
                 transaction.TransactionTime = DateTime.Now;
-                transaction.User = "User";
+                transaction.User = AccountController.login.Email;
                 transaction.TransactionType = "Deleted Book";
                 transaction.TransactionDetails = bookById.Name;
                 db.Audits.Add(transaction);
@@ -102,7 +102,7 @@ namespace SCRIPTERS.DAL
             transaction = new Audit();
             transaction.TransactionDate = DateTime.Now.Date;
             transaction.TransactionTime = DateTime.Now;
-            transaction.User = "User";
+            transaction.User = AccountController.login.Email;
             transaction.TransactionType = "Added Book";
             transaction.TransactionDetails = book.Name;
             db.Audits.Add(transaction);

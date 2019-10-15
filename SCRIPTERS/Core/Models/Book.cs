@@ -32,6 +32,7 @@ namespace SCRIPTERS.Core.Models
         [Display(Name = "Book Code")]
         public string Code { get; set; }
 
+        [Display(Name = "Book Condition")]
         [DataType(DataType.MultilineText)]
         [StringLength(maximumLength: 1000, ErrorMessage = "Description can not be more then 1000 characters")]
         public string Description { get; set; }
