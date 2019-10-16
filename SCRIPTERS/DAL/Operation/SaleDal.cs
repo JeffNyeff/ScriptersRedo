@@ -120,7 +120,7 @@ namespace SCRIPTERS.DAL.Operation
             transaction = new Audit();
             transaction.TransactionDate = DateTime.Now.Date;
             transaction.TransactionTime = DateTime.Now;
-            transaction.User = AccountController.login.Email;
+            transaction.User = "User";
             transaction.TransactionType = "Created Book Sale transaction" + " " + sale.Outlet;
             transaction.TransactionDetails = sale.SaleNumber;
             sale.SaleDate = DateTime.Now;

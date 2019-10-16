@@ -1,4 +1,4 @@
-﻿/// <reference path="~/Theme/bower_components/jquery/dist/jquery.min.js" />
+﻿///<reference path="~/Theme/bower_components/jquery/dist/jquery.min.js" />
 $(document).ready(function () {
     $("#PurchaseDate").datepicker({
         autoclose: true
@@ -10,12 +10,12 @@ $(document).ready(function () {
         var itemName = $("#ItemName").val();
         var quantity = $("#ItemQuantity").val();
 
-       // alert(costPrice);
-        if (itemName == "" || quantity == "" ||  costPrice =="" ||costPrice >= sellingPrice) {
-           
-           
+        // alert(costPrice);
+        if (itemName == "" || quantity == "" || costPrice == "" || costPrice >= sellingPrice) {
 
-          
+
+
+
 
             //validation to check if we are making profit
             if (costPrice >= sellingPrice) {
