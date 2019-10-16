@@ -29,13 +29,13 @@
                             @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                         </div>
                     </div>
-                    <div class="form-group">
+                    @*<div class="form-group">
                         @Html.LabelFor(model => model.CostPrice, htmlAttributes: new {@class = "control-label col-md-2" })
                         <div class="col-md-8">
                             @Html.EditorFor(model => model.CostPrice, new { htmlAttributes = new {Value= ViewBag.CostPrice , @class = "form-control" ,@readonly = "true" } })
                             @Html.ValidationMessageFor(model => model.CostPrice, "", new { @class = "text-danger" })
                         </div>
-                    </div>
+                    </div>*@
                     <div class="form-group">
                         @Html.LabelFor(model => model.SalePrice, htmlAttributes: new {@class = "control-label col-md-2" })
                         <div class="col-md-8">
@@ -61,7 +61,6 @@
                         @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-8">
                             <input type="file" name="ImageFile" id="Image" />
-                            <input type="button" class="btn btn-light" id="btnSave" value="Take Photo" onclick="ShowPopUp();" />
                             <br>
                             <div class="col-md-6">
                                 <div id="imagePreview" class="thumbnail" style="display:none">

@@ -93,7 +93,7 @@ namespace SCRIPTERS.BLL
                             stockVm.ItemName = itemDes.Item.Name;
                             stockVm.StockQuantity = _common.GetItemStockById(itemDes.Item.Id);
                             stockVm.CategoryFullPath = GetCategoryFullPathById(itemDes.Item.Id);
-                            stockVm.Price = itemDes.Item.CostPrice;
+                            //stockVm.Price = itemDes.Item.CostPrice;
                             StockReportList.Add(stockVm);
                         }
                     }

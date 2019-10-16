@@ -21,8 +21,8 @@ namespace SCRIPTERS.Core.Models
         public string Name { get; set; }
 
 
-        [Display(Name = "Cost Price")]
-        public decimal CostPrice { get; set; }
+        //[Display(Name = "Cost Price")]
+        //public decimal CostPrice { get; set; }
 
         [Required]
         [Display(Name = "Sale Price")]

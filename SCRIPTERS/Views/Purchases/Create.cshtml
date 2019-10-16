@@ -20,58 +20,68 @@
         <h4>Add Purchase Here</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="col-md-6">
-            <div class="form-group">
-                @Html.LabelFor(model => model.PurchaseNumber, "Purchase Number",htmlAttributes: new { @class = "control-label col-md-2"  })
-                <div class="col-md-8">
-                    @Html.EditorFor(model => model.PurchaseNumber, new { htmlAttributes = new {Value= ViewBag.PurchaseCode,@readonly = "true",  @class = "form-control" , @id="costField" } })
-                    @Html.ValidationMessageFor(model => model.PurchaseNumber, "", new { @class = "text-danger" })
-                </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            @Html.LabelFor(model => model.PurchaseNumber, "Purchase Number", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.PurchaseNumber, new { htmlAttributes = new { Value = ViewBag.PurchaseCode, @readonly = "true", @class = "form-control", @id = "costField" } })
+                @Html.ValidationMessageFor(model => model.PurchaseNumber, "", new { @class = "text-danger" })
             </div>
-            <div class="form-group">
-                @Html.Label("ItemName", "Name", htmlAttributes: new {@class = "control-label col-md-2"})
-                <div class="col-md-8">
-                    @Html.DropDownList("ItemName", ViewBag.ItemId as SelectList, "Select One", htmlAttributes: new {@class = "form-control"})
-                    @Html.ValidationMessage("ItemName", "", new {@class = "text-danger"})
-                </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("ItemName", "Name", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.DropDownList("ItemName", ViewBag.ItemId as SelectList, "Select One", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessage("ItemName", "", new { @class = "text-danger" })
             </div>
-            <div class="form-group">
-                @Html.Label("ItemQuantity", "Quantity", htmlAttributes: new {@class = "control-label col-md-2"})
-                <div class="col-md-8">
-                    @Html.Editor("ItemQuantity", new {htmlAttributes = new {@class = "form-control"}})
-                    @Html.ValidationMessage("ItemQuantity", "", new {@class = "text-danger"})
-                </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Supplier, "Supplier", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.SupplierId, ViewBag.Supplier as SelectList, "Select One", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.SupplierId, "", new { @class = "text-danger" })
             </div>
-             <div class="form-group">
-                @Html.Label("sellingPrice", "Selling Price", htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-8">
-                    @Html.Editor("sellingPrice", new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
-                    @Html.ValidationMessage("sellingPrice", "", new { @class = "text-danger" })
-                </div>
+            
+                @Html.ActionLink("Add Supplier", "Create", "Suppliers")
+           
+        </div>
+        <div class="form-group">
+            @Html.Label("ItemQuantity", "Quantity", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.Editor("ItemQuantity", new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessage("ItemQuantity", "", new { @class = "text-danger" })
             </div>
-            <div class="form-group">
-                @Html.Label("ItemPrice", "Cost Price", htmlAttributes: new {@class = "control-label col-md-2"})
-                <div class="col-md-8">
-                    @Html.Editor("ItemPrice", new {htmlAttributes = new {@class = "form-control"}})
-                    @Html.ValidationMessage("ItemPrice", "", new {@class = "text-danger"})
-                </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("sellingPrice", "Selling Price", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.Editor("sellingPrice", new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+                @Html.ValidationMessage("sellingPrice", "", new { @class = "text-danger" })
             </div>
-            @* Base selling price, purchase price must be below  this  *@
-            @*<div class="form-group">
-                @Html.Label("ItemPrice", "Selling Price", htmlAttributes: new {@class = "control-label col-md-2"})
-                <div class="col-md-8">
-                    @Html.Editor("ItemPrice", new {htmlAttributes = new {@class = "form-control"}})
-                    @Html.ValidationMessage("ItemPrice", "", new {@class = "text-danger"})
-                </div>
-            </div>*@
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-8">
-                    <div class="message_box" style="margin: 10px 0px;" ></div>
-                    <input type="button" value="Add" id="AddButton" class="btn btn-info "/>
-                </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("ItemPrice", "Cost Price", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.Editor("ItemPrice", new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessage("ItemPrice", "", new { @class = "text-danger" })
             </div>
-            <table class=" table table-responsive table-striped table-bordered table-hover table-condensed" id="Details">
-                <thead>
+        </div>
+        @* Base selling price, purchase price must be below  this  *@
+        @*<div class="form-group">
+            @Html.Label("ItemPrice", "Selling Price", htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-8">
+                @Html.Editor("ItemPrice", new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessage("ItemPrice", "", new {@class = "text-danger"})
+            </div>
+        </div>*@
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-8">
+                <div class="message_box" style="margin: 10px 0px;"></div>
+                <input type="button" value="Add" id="AddButton" class="btn btn-info " />
+            </div>
+        </div>
+        <table class=" table table-responsive table-striped table-bordered table-hover table-condensed" id="Details">
+            <thead>
                 <tr>
                     <td>SL</td>
                     <td>Item</td>
@@ -80,8 +90,8 @@
                     <td>Line Price</td>
                     <td>Action</td>
                 </tr>
-                </thead>
-                <tbody id="PurchaseDetailsTable">
+            </thead>
+            <tbody id="PurchaseDetailsTable">
                 @if (Model != null && Model.PurchaseDetail != null && Model.PurchaseDetail.Count > 0)
                 {
                     var sl = 0;
@@ -95,9 +105,9 @@
                         </tr>
                     }
                 }
-                </tbody>
-            </table>
-        </div>
+            </tbody>
+        </table>
+    </div>
         <div class="col-md-6">
             <div class="form-group">
                 @Html.LabelFor(model => model.OutletId, "Outlet", htmlAttributes: new { @class = "control-label col-md-2" })
@@ -120,13 +130,8 @@
                     @Html.ValidationMessageFor(model => model.PurchaseDate, "", new { @class = "text-danger" })
                 </div>
             </div>
-            <div class="form-group">
-                @Html.LabelFor(model => model.Supplier, "Supplier", htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.DropDownListFor(model => model.SupplierId, ViewBag.Supplier as SelectList, "Select One", htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.SupplierId, "", new { @class = "text-danger" })
-                </div>
-            </div>
+            
+
             <div class="form-group">
                 @Html.LabelFor(model => model.Remarks, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
