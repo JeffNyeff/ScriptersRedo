@@ -1,4 +1,4 @@
-﻿ <reference path="~/Theme/bower_components/jquery/dist/jquery.min.js" />
+﻿/// <reference path="~/Theme/bower_components/jquery/dist/jquery.min.js" />
 $(document).ready(function () {
     $("#PurchaseDate").datepicker({
         autoclose: true

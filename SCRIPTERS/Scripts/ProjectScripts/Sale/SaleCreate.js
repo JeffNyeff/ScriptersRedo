@@ -13,7 +13,7 @@ $(document).ready(function () {
         var stock = $("#Stock").val();
         left = quantity - stock;
         // alert(costPrice);
-        if (itemName == "" || quantity == "" || left > 0) {
+        if (itemName == "" || quantity == "" || quantity==0|| left > 0) {
 
 
             //validation to check if quantity is higher than stock
@@ -21,12 +21,12 @@ $(document).ready(function () {
                 $(".message_box").html(
                     '<span style="color:red;">Error! quantity is higher than stock available. </span>'
                 );
-                $("#AddButton").hide();
+           
                 $(".message_box").show();
 
             }
             //input validation
-            if (quantity == "") {
+            if (quantity == "" || quantity ==0) {
                 $(".message_box").html(
                     '<span style="color:red;">Please provide quantity </span>'
                 );
