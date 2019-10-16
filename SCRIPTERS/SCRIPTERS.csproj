@@ -400,19 +400,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="Migrations\201910151455514_Initial-Migration.cs" />
-    <Compile Include="Migrations\201910151455514_Initial-Migration.Designer.cs">
-      <DependentUpon>201910151455514_Initial-Migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910152251338_UpdatedMigration.cs" />
-    <Compile Include="Migrations\201910152251338_UpdatedMigration.Designer.cs">
-      <DependentUpon>201910152251338_UpdatedMigration.cs</DependentUpon>
-=======
-    <Compile Include="Migrations\201910151442023_Initial-Migration.cs" />
-    <Compile Include="Migrations\201910151442023_Initial-Migration.Designer.cs">
-      <DependentUpon>201910151442023_Initial-Migration.cs</DependentUpon>
->>>>>>> 5ddfda80b7fee3a4903d41b062f0eeedaf8e8f84
+    <Compile Include="Migrations\201910161614151_Initial-Migration.cs" />
+    <Compile Include="Migrations\201910161614151_Initial-Migration.Designer.cs">
+      <DependentUpon>201910161614151_Initial-Migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -8115,16 +8105,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <EmbeddedResource Include="Migrations\201910151455514_Initial-Migration.resx">
-      <DependentUpon>201910151455514_Initial-Migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910152251338_UpdatedMigration.resx">
-      <DependentUpon>201910152251338_UpdatedMigration.cs</DependentUpon>
-=======
-    <EmbeddedResource Include="Migrations\201910151442023_Initial-Migration.resx">
-      <DependentUpon>201910151442023_Initial-Migration.cs</DependentUpon>
->>>>>>> 5ddfda80b7fee3a4903d41b062f0eeedaf8e8f84
+    <EmbeddedResource Include="Migrations\201910161614151_Initial-Migration.resx">
+      <DependentUpon>201910161614151_Initial-Migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -7,23 +7,13 @@ namespace SCRIPTERS.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-<<<<<<< HEAD:SCRIPTERS/Migrations/201910152251338_UpdatedMigration.Designer.cs
-    public sealed partial class UpdatedMigration : IMigrationMetadata
-    {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdatedMigration));
-        
-        string IMigrationMetadata.Id
-        {
-            get { return "201910152251338_UpdatedMigration"; }
-=======
     public sealed partial class InitialMigration : IMigrationMetadata
     {
         private readonly ResourceManager Resources = new ResourceManager(typeof(InitialMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "201910151442023_Initial-Migration"; }
->>>>>>> 5ddfda80b7fee3a4903d41b062f0eeedaf8e8f84:SCRIPTERS/Migrations/201910151442023_Initial-Migration.Designer.cs
+            get { return "201910161614151_Initial-Migration"; }
         }
         
         string IMigrationMetadata.Source
