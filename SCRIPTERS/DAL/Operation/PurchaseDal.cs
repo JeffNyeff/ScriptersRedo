@@ -114,7 +114,7 @@ namespace SCRIPTERS.DAL.Operation
                 transaction = new Audit();
                 transaction.TransactionDate = DateTime.Now.Date;
                 transaction.TransactionTime = DateTime.Now;
-                transaction.User = AccountController.login.Email;
+                transaction.User = "user";
                 transaction.TransactionType = "Deleted Purchase transaction" + " " + purchaseById.PurchaseNumber;
                 transaction.TransactionDetails = purchaseById.PurchaseNumber;
                 _db.Audits.Add(transaction);
@@ -132,12 +132,11 @@ namespace SCRIPTERS.DAL.Operation
         {
             var firstEmploeeId = _db.Employees.FirstOrDefault().Id;
              purchase.EmployeeId = firstEmploeeId; // Set default employee to the first employee, */
-           
 
             transaction = new Audit();
             transaction.TransactionDate = DateTime.Now.Date;
             transaction.TransactionTime = DateTime.Now;
-            transaction.User = AccountController.login.Email;
+            transaction.User = "user";
             transaction.TransactionType = "Created Purchase transaction" + " " + purchase.PurchaseNumber;
             transaction.TransactionDetails = purchase.PurchaseNumber;
             purchase.PurchaseDate = DateTime.Now;

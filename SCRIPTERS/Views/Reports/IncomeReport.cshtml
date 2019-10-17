@@ -32,7 +32,7 @@
             </div>
             <div class="col-md-4">
                 <div class="form-group">
-                    @Html.Label("ToDate", "From Date", htmlAttributes: new { @class = "control-label col-md-3" })
+                    @Html.Label("ToDate", "To Date", htmlAttributes: new { @class = "control-label col-md-3" })
                     <div class="col-md-9">
                         @Html.Editor("ToDate", new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessage("ToDate", "", new { @class = "text-danger" })
@@ -48,7 +48,7 @@
         <div class="col-md-12">
             @if (Model != null)
             {
-                <p>@Html.ActionLink("Download Pdf", "ExportIncomePdf", "Reports",new { @class = "btn btn-info btn-sm", target = "_blank" })</p>
+                <p>@Html.ActionLink("Generate Income Report", "ExportIncomePdf", "Reports",new { @class = "btn btn-info btn-sm", target = "_blank" })</p>
             }
         </div>
     </div>
@@ -85,7 +85,7 @@
                     <td>Sl</td>
                     <td>Date</td>
                     <td>Supplier Name</td>
-                    <td>Purchase Amount</td>
+                    <td>Purchase Amount R</td>
                 </tr>
                 @if (Model != null)
                 {
@@ -113,13 +113,13 @@
                 <table class="table table-bordered table-condensed table-hover table-responsive table-striped">
                     <tr style="background-color:cornflowerblue; color:white">
                         <th>
-                            Total Sales
+                            Total Sales R
                         </th>
                         <th>
-                            Total Purchase
+                            Total Purchase R
                         </th>
                         <th>
-                            Total Profit
+                            Total Profit R
                         </th>
                     </tr>
 

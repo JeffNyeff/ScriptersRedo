@@ -61,7 +61,7 @@ namespace SCRIPTERS.DAL
             transaction = new Audit();
             transaction.TransactionDate = DateTime.Now.Date;
             transaction.TransactionTime = DateTime.Now;
-            transaction.User = AccountController.login.Email;
+            transaction.User = "user";
             transaction.TransactionType = "Modified Book";
             transaction.TransactionDetails = book.Name;
             db.Audits.Add(transaction);
@@ -83,7 +83,7 @@ namespace SCRIPTERS.DAL
                 transaction = new Audit();
                 transaction.TransactionDate = DateTime.Now.Date;
                 transaction.TransactionTime = DateTime.Now;
-                transaction.User = AccountController.login.Email;
+                transaction.User = "User";
                 transaction.TransactionType = "Deleted Book";
                 transaction.TransactionDetails = bookById.Name;
                 db.Audits.Add(transaction);

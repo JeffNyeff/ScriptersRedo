@@ -11,7 +11,7 @@ $(document).ready(function () {
         var quantity = $("#ItemQuantity").val();
 
         // alert(costPrice);
-        if (itemName == "" || quantity == "" || costPrice == "" || costPrice >= sellingPrice) {
+        if (itemName == "" || quantity == "" || quantity==0 || costPrice == "" || costPrice >= sellingPrice) {
 
 
 
@@ -33,7 +33,7 @@ $(document).ready(function () {
                 $(".message_box").show();
                 $("#ItemPrice").focus();
             }
-            if (quantity == "") {
+            if (quantity == "" || quantity ==0) {
                 $(".message_box").html(
                     '<span style="color:red;">Please provide quantity </span>'
                 );

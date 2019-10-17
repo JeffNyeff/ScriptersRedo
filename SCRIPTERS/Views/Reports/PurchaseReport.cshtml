@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    @Html.Label("Code", "Code", htmlAttributes: new { @class = "control-label col-md-3" })
+                    @Html.Label("Code", "Purchase Code", htmlAttributes: new { @class = "control-label col-md-3" })
                     <div class="col-md-9">
                         @Html.Editor("Code", new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessage("Code", "", new { @class = "text-danger" })
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    @Html.Label("ToDate", "From Date", htmlAttributes: new { @class = "control-label col-md-3" })
+                    @Html.Label("ToDate", "To Date", htmlAttributes: new { @class = "control-label col-md-3" })
                     <div class="col-md-9">
                         @Html.Editor("ToDate", new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessage("ToDate", "", new { @class = "text-danger" })
@@ -44,7 +44,7 @@
                 </div>
             </div>
             <div class="col-md-offset-10 col-md-2">
-                <input type="submit" name="Show" id="ShowButton" value="Show" class="btn btn-primary" />
+                <input type="submit" name="Show" id="ShowButton" value="View Report" class="btn btn-primary" />
             </div>
         </div>
     </div>
@@ -55,7 +55,7 @@
         <div class="col-md-12">
             @if (Model != null)
             {
-                <p>@Html.ActionLink("Download Pdf", "ExportPurchasePdf", "InventoryReports", new { @class = "btn btn-primary btn-sm", target = "_blank" })</p>
+                <p>@Html.ActionLink("Generate Purchase Report", "ExportPurchasePdf", "InventoryReports", new { @class = "btn btn-primary btn-sm", target = "_blank" })</p>
             }
             <table class="table table-bordered table-condensed table-hover table-responsive table-striped">
                 <tr style="background-color:cornflowerblue; color:white">
@@ -75,7 +75,7 @@
                         Supplier
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Total)
+                        Total R
                     </th>
                     <th>Action</th>
                 </tr>
@@ -100,7 +100,7 @@
                                     <tr style="background-color:cornflowerblue; color:white">
                                         <td>Item Names</td>
                                         <td>Quantity</td>
-                                        <td>Price</td>
+                                        <td>Price R</td>
                                     </tr>
                                     @foreach (var itemDes in item.PurchaseDetail)
                                     {
@@ -133,7 +133,7 @@
             <div class="col-md-offset-10 col-md-2">
                 <table>
                     <tr>
-                        <td><b>Total :</b></td>
+                        <td><b>Total :R</b></td>
                         <td><b>&nbsp;@TotalPrice</b></td>
                     </tr>
                 </table>

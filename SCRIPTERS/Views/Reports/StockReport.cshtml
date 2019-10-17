@@ -8,7 +8,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    <h4>Book Stock Report</h4>
+    <h4>Books in Stock</h4>
     <hr />
     <div class="row">
         <div class="form-horizontal">
@@ -20,7 +20,7 @@
                         @Html.ValidationMessage("OutletId", "", new { @class = "text-danger" })
                     </div>
                     <div class="col-md-3">
-                        <input type="submit" name="Show" id="ShowButton" value="Show" class="btn btn-info" />
+                        <input type="submit" name="Show" id="ShowButton" value="View Stock" class="btn btn-info" />
                     </div>
                 </div>
             </div>
@@ -58,21 +58,25 @@
                     int sl = 0;
                     foreach (var item in Model)
                     {
-                        <tr>
-                            <td>@(++sl)</td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ItemName)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.CategoryFullPath)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.StockQuantity)
-                            </td>
-                            @*<td>
-                                @Html.DisplayFor(modelItem => item.Price)
-                            </td>*@
-                        </tr>
+                        item.CategoryFullPath = "Available";
+            <tr>
+                <td>@(++sl)</td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ItemName)
+                </td>
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategoryFullPath)
+                </td>
+               
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.StockQuantity)
+                </td>
+                @*<td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>*@
+            </tr>
                     }
                 }
 
