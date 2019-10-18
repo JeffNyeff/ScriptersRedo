@@ -319,8 +319,11 @@
     <Compile Include="BLL\SupplierBll.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AuditTrailController.cs" />
+    <Compile Include="Controllers\BookPhotoController.cs" />
     <Compile Include="Controllers\BusinessRulesController.cs" />
+    <Compile Include="Controllers\CustomerPhotoController.cs" />
     <Compile Include="Controllers\EmailController.cs" />
+    <Compile Include="Controllers\ExpensePhotoController.cs" />
     <Compile Include="Controllers\InventoryController.cs" />
     <Compile Include="Controllers\InventoryCategoriesController.cs" />
     <Compile Include="Controllers\BookCategoriesController.cs" />
@@ -400,9 +403,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201910161614151_Initial-Migration.cs" />
-    <Compile Include="Migrations\201910161614151_Initial-Migration.Designer.cs">
-      <DependentUpon>201910161614151_Initial-Migration.cs</DependentUpon>
+    <Compile Include="Migrations\201910180919026_Intial-Migration.cs" />
+    <Compile Include="Migrations\201910180919026_Intial-Migration.Designer.cs">
+      <DependentUpon>201910180919026_Intial-Migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -8088,10 +8091,19 @@
     <Content Include="Views\BusinessRules\Details.cshtml" />
     <Content Include="Views\BusinessRules\Edit.cshtml" />
     <Content Include="Views\BusinessRules\Index.cshtml" />
+    <Content Include="Views\BookPhoto\Index.cshtml" />
+    <Content Include="Views\BookPhoto\Changephoto.cshtml" />
+    <Content Include="Views\ExpensePhoto\Index.cshtml" />
+    <Content Include="Views\ExpensePhoto\Changephoto.cshtml" />
+    <Content Include="Views\CustomerPhoto\Index.cshtml" />
+    <Content Include="Views\CustomerPhoto\Changephoto.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="BookImages\" />
     <Folder Include="Content\Out\" />
+    <Folder Include="CustomerImages\" />
+    <Folder Include="ExpenseImages\" />
     <Folder Include="Views\ManageUsers\" />
   </ItemGroup>
   <ItemGroup>
@@ -8105,8 +8117,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201910161614151_Initial-Migration.resx">
-      <DependentUpon>201910161614151_Initial-Migration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201910180919026_Intial-Migration.resx">
+      <DependentUpon>201910180919026_Intial-Migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,14 +1,19 @@
 ﻿
+@{
+    ViewBag.Title = "Capture Customer Photo";
+}
+
+
 <script type="text/javascript">
     function UploadPic() {
         $.ajax({
             type: 'POST',
-            url: ("@Url.Content("~/Photo/Rebind")/"),
+            url: ("@Url.Content("~/CustomerPhoto/Rebind")/"),
             dataType: 'json',
             success: function (data) {
                 $("#show").attr("src", data);
                 document.getElementById('Submit1').disabled = false;
-                alert("Photo Captured successfully!");                
+                alert("Photo Captured successfully!");
             }
         });
     }
@@ -31,7 +36,7 @@
 </script>
 @using (Html.BeginForm())
 {
-@section scripts
+    @section scripts
 {
         <script src="@Url.Content("~/Scripts/jquery.webcam.js")">
         </script>
@@ -46,7 +51,7 @@
                     UploadPic();
                 },
                 onCapture: function () {
-                    webcam.save("@Url.Content("~/Photo/Capture")/");
+                    webcam.save("@Url.Content("~/CustomerPhoto/Capture")/");
              },
                 debug: function () { },
                 onLoad: function () { }
@@ -63,13 +68,13 @@
             <input type="button" value="Capture" onclick="webcam.capture();" />
         </div>
         <div style="float: left; margin-left: 20px; border: 4px solid #ccc; padding: 5px">
-            <img id="show" style="width: 320px; height: 240px;" src="../../WebImages/person.jpg" />
+            <img id="show" style="width: 320px; height: 240px;" src="../../ExpenseImages/person.jpg" />
             <br>
             <br>
             <input id="Submit1" type="submit" onclick="Uploadsubmit();" value="submit" />
         </div>
     </div>
-    
+
 }
 <script type="text/javascript">
     window.onload = load();
@@ -80,3 +85,4 @@
     }
 
 </script>
+
