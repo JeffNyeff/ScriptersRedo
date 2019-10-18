@@ -102,7 +102,7 @@
                                     <tr style="background-color:cornflowerblue; color:white">
                                         <td>Item Names</td>
                                         <td>Quantity</td>
-                                        <td>Price</td>
+                                        <td>Price R:</td>
                                     </tr>
                                     @foreach (var itemDes in item.InventorySalesDetails)
                                     {
@@ -118,7 +118,7 @@
                                 @Html.DisplayFor(modelItem => item.CusName)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Total)
+                               R @Html.DisplayFor(modelItem => item.Total)
                             </td>
                             <td>
                                 <a class="btn btn-sm btn-info" href="@Url.Action("Details","InventorySales",new { id=item.Id})">Details</a>
@@ -135,7 +135,7 @@
             <div class="col-md-offset-10 col-md-2">
                 <table>
                     <tr>
-                        <td><b>Total :</b></td>
+                        <td><b>Total R</b></td>
                         <td><b>&nbsp;@TotalPrice</b></td>
                     </tr>
                 </table>
