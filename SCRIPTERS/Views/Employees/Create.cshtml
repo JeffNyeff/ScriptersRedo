@@ -5,6 +5,14 @@
     ViewBag.Title = "Create";
 }
 
+@using (Html.BeginForm("Index", "Help", FormMethod.Post, new { target = "_blank", @title = "Select to get help" }))
+{
+    <p>
+        <input type="hidden" name="action" value="AddEmployee" />
+        <button type="submit" style="background:none;border:none;text-decoration:none;cursor:pointer;color:#7985d4">Help</button>
+    </p>
+}
+
 @using (Html.BeginForm("Create", "Employees", FormMethod.Post, new { enctype = "multipart/form-data", id = "form" }))
 {
     @Html.AntiForgeryToken()
@@ -211,9 +219,9 @@
             }
         }
         function ShowPopUp() {
-       
+
             window.open('/Photo/Index/', "wndPopUp", 'width=720,height=400,left=100,top=100,resizable=no');
-        
+
         }
     </script>
 }
