@@ -38,7 +38,7 @@
             <div class="form-group">
                 @Html.Label("ItemQuantity", "Quantity", htmlAttributes: new {@class = "control-label col-md-2"})
                 <div class="col-md-8">
-                    @Html.Editor("ItemQuantity", new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.Editor("ItemQuantity", new {htmlAttributes = new {@class = "form-control", placeholder ="Enter the quantity of purchase"}})
                     @Html.ValidationMessage("ItemQuantity", "", new {@class = "text-danger"})
                 </div>
             </div>
@@ -52,7 +52,7 @@
             <div class="form-group">
                 @Html.Label("ItemPrice", "Cost Price", htmlAttributes: new {@class = "control-label col-md-2"})
                 <div class="col-md-8">
-                    @Html.Editor("ItemPrice", new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.Editor("ItemPrice", new {htmlAttributes = new {@class = "form-control" ,placeholder ="Enter cost price of item"}})
                     @Html.ValidationMessage("ItemPrice", "", new {@class = "text-danger"})
                 </div>
             </div>
@@ -67,7 +67,7 @@
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-8">
                     <div class="message_box" style="margin: 10px 0px;" ></div>
-                    <input type="button" value="Add" id="AddButton" class="btn btn-info "/>
+                    <input type="button" title="Select button to add purchase" value="Add" id="AddButton" class="btn btn-info "/>
                 </div>
             </div>
             <table class=" table table-responsive table-striped table-bordered table-hover table-condensed" id="Details">
@@ -124,7 +124,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.Remarks, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.Remarks, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.Remarks, new { htmlAttributes = new { @class = "form-control" , placeholder ="Enter the remarks of the purchase"} })
                     @Html.ValidationMessageFor(model => model.Remarks, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -144,7 +144,7 @@
             </div>
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Make Purchase" class="btn btn-success" />
+                    <input type="submit" title="Select button to make purchase" value="Make Purchase" class="btn btn-success" />
                 </div>
             </div>
         </div>
