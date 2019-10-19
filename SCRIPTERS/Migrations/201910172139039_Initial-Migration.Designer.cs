@@ -13,7 +13,7 @@ namespace SCRIPTERS.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201910161614151_Initial-Migration"; }
+            get { return "201910172139039_Initial-Migration"; }
         }
         
         string IMigrationMetadata.Source
