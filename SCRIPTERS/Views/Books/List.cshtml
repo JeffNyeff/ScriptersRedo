@@ -17,7 +17,7 @@
             <thead>
                 <tr>
                     <th>
-                        Category Name
+                        <b>Category Name</b> 
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.Code)
@@ -29,10 +29,13 @@
                         @Html.DisplayNameFor(model => model.Description)
                     </th>
                     @*<th>
-                        @Html.DisplayNameFor(model => model.PurchaseDetails.)
-                    </th>*@
+            @Html.DisplayNameFor(model => model.PurchaseDetails.)
+        </th>*@
                     <th>
                         Cost Price
+                    </th>
+                    <th>
+                        Person Details
                     </th>
                     <th>
                         Sale Price
@@ -65,9 +68,12 @@
                         @Html.DisplayFor(modelItem => item.CostPrice)
                     </td>
                     <td>
+                        @Html.DisplayFor(modelItem => item.PersonDetails)
+                    </td>
+                    <td>
                         @Html.DisplayFor(modelItem => item.SalePrice)
                     </td>
-                  
+
 
                     <td>
                         @if (item.Image != null)

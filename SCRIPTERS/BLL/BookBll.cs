@@ -39,6 +39,12 @@ namespace SCRIPTERS.BLL
             return bookCategory;
         }
 
+        internal dynamic GetSupplier()
+        {
+            var supplier = _bookDal.GetSuppliers();
+            return supplier;
+        }
+
         internal Book GetById(int? id)
         {
             Book book = _bookDal.GetById(id);
