@@ -1,7 +1,7 @@
 ﻿@model SCRIPTERS.Core.Models.Book
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "   Create";
 }
 
 @using (Html.BeginForm("Index", "Help", FormMethod.Post, new { target = "_blank", @title = "Select to get help" }))
@@ -25,18 +25,32 @@
 
                     <div class="form-group">
                         @Html.LabelFor(model => model.ItemCategoryId, "Category Name", htmlAttributes: new { @class = "control-label col-md-2" })
+<<<<<<< HEAD
+                        <div id="category_prospective" class="col-md-8">
+=======
                         <div class="col-md-8">
+>>>>>>> 3872901d9dce172dd3b62c6dd196456e49309b9a
                             @Html.DropDownListFor(model => model.ItemCategoryId, ViewBag.ItemCategoryId as SelectList, "Select One", htmlAttributes: new { @class = "form-control" })
                             @Html.ValidationMessageFor(model => model.ItemCategoryId, "", new { @class = "text-danger" })
                         </div>
                     </div>
+
                     <div class="form-group">
-                        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.LabelFor(model => model.Name, "Book Details", htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-8">
                             @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                         </div>
                     </div>
+
+                    <div class="form-group" id="prospective_Category">
+                        @Html.LabelFor(model => model.PersonDetails, "Person Details", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.PersonDetails, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PersonDetails, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
                     <div class="form-group">
                         @Html.LabelFor(model => model.CostPrice, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-8">
@@ -68,7 +82,7 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-8">
-                            <input type="file" name="ImageFile" id="Image" />
+                            <input type="file" name="ImageFile" id="Image" /><br />
                             <input type="button" class="btn btn-light" id="btnSave" value="Take Photo" onclick="ShowPopUp();" />
                             <br>
                             <div class="col-md-6">
@@ -130,10 +144,17 @@
                 }
             }
         }
+<<<<<<< HEAD
+         function ShowPopUp() {
+       
+            window.open('/BookPhoto/Index/', "wndPopUp", 'width=850,height=800,left=100,top=100,resizable=no');
+        
+=======
         function ShowPopUp() {
 
             window.open('/Photo/Index/', "wndPopUp", 'width=850,height=800,left=100,top=100,resizable=no');
 
+>>>>>>> 3872901d9dce172dd3b62c6dd196456e49309b9a
         }
     </script>
 }

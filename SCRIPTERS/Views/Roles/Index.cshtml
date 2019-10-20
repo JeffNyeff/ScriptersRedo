@@ -3,17 +3,9 @@
     ViewBag.Title = "Index";
 }
 
-@using (Html.BeginForm("Index", "Help", FormMethod.Post, new { target = "_blank", @title = "Select to get help" }))
-{
-    <p>
-        <input type="hidden" name="action" value="users" />
-        <button type="submit" style="background:none;border:none;text-decoration:none;cursor:pointer;color:#7985d4">Help</button>
-    </p>
-}
-
 <div class="form-horizontal">
     <div class="form-group">
-
+       
         <section class="col-sm-6">
             <div class="col-md-10">@Html.ActionLink("Create Role", "Create", "Roles")</div>
         </section>

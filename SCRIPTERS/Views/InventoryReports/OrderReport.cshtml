@@ -4,15 +4,6 @@
     ViewBag.Title = "OrderReport";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-@using (Html.BeginForm("Index", "Help", FormMethod.Post, new { target = "_blank", @title = "Select to get help" }))
-{
-    <p>
-        <input type="hidden" name="action" value="orderReport" />
-        <button type="submit" style="background:none;border:none;text-decoration:none;cursor:pointer;color:#7985d4">Help</button>
-    </p>
-}
-
 @using (Html.BeginForm())
 {
     decimal TotalPrice = 0;
@@ -84,7 +75,7 @@
                         Supplier
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Total) R
+                        @Html.DisplayNameFor(model => model.Total)
                     </th>
                     <th>Action</th>
                 </tr>
@@ -109,7 +100,7 @@
                                     <tr style="background-color:cornflowerblue; color:white">
                                         <td>Item Names</td>
                                         <td>Quantity</td>
-                                        <td>Price R</td>
+                                        <td>Price</td>
                                     </tr>
                                     @foreach (var itemDes in item.OrderDetail)
                                     {
@@ -142,7 +133,7 @@
             <div class="col-md-offset-10 col-md-2">
                 <table>
                     <tr>
-                        <td><b>Total R</b></td>
+                        <td><b>Total :</b></td>
                         <td><b>&nbsp;@TotalPrice</b></td>
                     </tr>
                 </table>

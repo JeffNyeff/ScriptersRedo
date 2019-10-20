@@ -4,14 +4,6 @@
     ViewBag.Title = "Create";
 }
 
-@using (Html.BeginForm("Index", "Help", FormMethod.Post, new { target = "_blank", @title = "Select to get help" }))
-{
-    <p>
-        <input type="hidden" name="action" value="Welcomepage" />
-        <button type="submit" style="background:none;border:none;text-decoration:none;cursor:pointer;color:#7985d4">Help</button>
-    </p>
-}
-
 @using (Html.BeginForm("Create", "ExpenseItems", FormMethod.Post, new { enctype = "multipart/form-data", id = "form" }))
 {
     @Html.AntiForgeryToken()
@@ -53,7 +45,8 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-8">
-                            <input type="file" name="ImageFile" id="Image" />
+                            <input type="file" name="ImageFile" id="Image" /><br />
+                            <input type="button" class="btn btn-light" id="btnSave" value="Take Photo" onclick="ShowPopUp();" />
                             <br>
                             <div class="col-md-6">
                                 <div id="imagePreview" class="thumbnail" style="display:none">
@@ -112,5 +105,11 @@
                 }
             }
         }
+        function ShowPopUp() {
+       
+            window.open('/ExpensePhoto/Index/', "wndPopUp", 'width=850,height=800,left=100,top=100,resizable=no');
+        
+        }
+
     </script>
 }

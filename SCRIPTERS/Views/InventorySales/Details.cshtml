@@ -71,8 +71,8 @@
                         <th>Sl</th>
                         <th>Item</th>
                         <th>Quantity</th>
-                        <th>Price R:</th>
-                        <th>Line Price R:</th>
+                        <th>Price</th>
+                        <th>Line Price</th>
                     </tr>
                     @{ int sl = 1;}
                     @foreach (var item in Model.InventorySalesDetails)
@@ -93,7 +93,7 @@
             <div class="col-md-offset-8 col-md-4">
                 <dl class="dl-horizontal">
                     <dt>
-                       Sub-total R
+                        @Html.DisplayNameFor(model => model.SubTotal)
                     </dt>
 
                     <dd>
@@ -101,7 +101,7 @@
                     </dd>
 
                     <dt>
-                        VAT
+                        @Html.DisplayNameFor(model => model.Vat)
                     </dt>
 
                     <dd>
@@ -109,14 +109,14 @@
                     </dd>
 
                     <dt>
-                       Discount R
+                        @Html.DisplayNameFor(model => model.Discount)
                     </dt>
 
                     <dd>
                         @Html.DisplayFor(model => model.Discount)
                     </dd>
                     <dt>
-                        Total R
+                        @Html.DisplayNameFor(model => model.Total)
                     </dt>
 
                     <dd>
@@ -124,7 +124,7 @@
                     </dd>
 
                     <dt>
-                        Total Due R
+                        @Html.DisplayNameFor(model => model.DueAmount)
                     </dt>
 
                     <dd>

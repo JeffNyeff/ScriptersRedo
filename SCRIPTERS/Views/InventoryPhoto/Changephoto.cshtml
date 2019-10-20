@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Capture Inventory Image";
+}
+
+<script type="text/javascript">
+
+    function ShowPopUp() {
+
+        window.open('/InventoryPhoto/Index/', "wndPopUp", 'width=900,height=900,left=400,top=400,resizable=yes');
+
+    }
+
+</script>
+
+
+<img id="Userpic" src="@ViewBag.pic" />
+<br />
+<input type="button" id="btnSave" value="Take Photo" onclick="ShowPopUp();" />
+
+
+

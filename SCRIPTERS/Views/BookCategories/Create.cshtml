@@ -4,14 +4,6 @@
     ViewBag.Title = "Create";
 }
 
-@using (Html.BeginForm("Index", "Help", FormMethod.Post, new { target = "_blank", @title = "Select to get help" }))
-{
-    <p>
-        <input type="hidden" name="action" value="AddbooksCat" />
-        <button type="submit" style="background:none;border:none;text-decoration:none;cursor:pointer;color:#7985d4">Help</button>
-    </p>
-}
-
 @using (Html.BeginForm("Create", "BookCategories", FormMethod.Post, new { enctype = "multipart/form-data", id = "form" }))
 {
     @Html.AntiForgeryToken()
@@ -26,22 +18,22 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-8">
-                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter the book category name" } })
+                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                         </div>
                     </div>
-
+                  
                     <div class="form-group">
                         @Html.LabelFor(model => model.Code, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-8">
-                            @Html.EditorFor(model => model.Code, new { htmlAttributes = new { Value = ViewBag.autoCode, @readonly = "true", @class = "form-control" } })
+                            @Html.EditorFor(model => model.Code, new { htmlAttributes = new { Value = ViewBag.autoCode ,@readonly ="true", @class = "form-control"  } })
                             @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
                         </div>
                     </div>
                     <div class="form-group">
                         @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-8">
-                            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter the book category description" } })
+                            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -63,7 +55,7 @@
                         </div>*@
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-8">
-                            <input type="submit" title="Click to submit book category details" value="Create" class="btn btn-success" />
+                            <input type="submit" value="Create" class="btn btn-success" />
                         </div>
                     </div>
                 </div>

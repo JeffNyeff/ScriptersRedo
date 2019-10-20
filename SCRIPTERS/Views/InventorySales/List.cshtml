@@ -13,19 +13,10 @@
         Layout = "~/Views/Shared/_Layout2.cshtml";
     }
 }
-
-@using (Html.BeginForm("Index", "Help", FormMethod.Post, new { target = "_blank", @title = "Select to get help" }))
-{
-    <p>
-        <input type="hidden" name="action" value="manageInventorySale" />
-        <button type="submit" style="background:none;border:none;text-decoration:none;cursor:pointer;color:#7985d4">Help</button>
-    </p>
-}
-
 <div class="form-horizontal">
     <div class="form-group">
-        <label class="control-label col-md-2" title="This is your list of sales">List of Sales</label>
-        <div class="col-md-10" title="Click to create new inventory sale">@Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-sm btn-primary" })</div>
+        <label class="control-label col-md-2">List of Sales</label>
+        <div class="col-md-10">@Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-sm btn-primary" })</div>
     </div>
 </div>
 <hr />
