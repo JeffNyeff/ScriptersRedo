@@ -5,8 +5,8 @@
 }
 <div class="form-horizontal">
     <div class="form-group">
-        <label class="control-label col-md-2">List of Expense Categories</label>
-        <div class="col-md-10">@Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-sm btn-primary" })</div>
+        <label class="control-label col-md-2" title="Your lsit of expense categories">List of Expense Categories</label>
+        <div class="col-md-10" title="Click to create new expense category">@Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-sm btn-primary" })</div>
     </div>
 </div>
 
@@ -48,9 +48,9 @@
                             @Html.DisplayFor(modelItem => item.Description)
                         </td>
 
-                        <td>
+                        <td title="Click to edit expense category">
                             @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-sm btn-primary" })
-                            <a class="btn btn-sm btn-danger delete_link" href="#" onclick="GetDeleteId(@item.Id)">Delete</a>
+                            <a class="btn btn-sm btn-danger delete_link" href="#" onclick="GetDeleteId(@item.Id)" title="Click to delete expense category">Delete</a>
                         </td>
                     </tr>
                 }

@@ -38,7 +38,7 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.Name, "Book Details", htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-8">
-                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", placeholder="e.g Infromation systems"} })
                             @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -61,7 +61,7 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.SalePrice, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-8">
-                            @Html.EditorFor(model => model.SalePrice, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.EditorFor(model => model.SalePrice, new { htmlAttributes = new { @class = "form-control" , placeholder="Enter sale price"} })
                             @Html.ValidationMessageFor(model => model.SalePrice, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-8">
-                            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" ,placeholder="e.g requested by judith 0781258956" } })
                             @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -98,7 +98,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-8">
-                            <input type="submit" value="Create" class="btn btn-success" />
+                            <input type="submit" title="Click to add a book" value="Create" class="btn btn-success" />
                         </div>
                     </div>
                 </div>

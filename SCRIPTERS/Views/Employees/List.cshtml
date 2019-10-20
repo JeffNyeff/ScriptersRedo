@@ -7,7 +7,7 @@
 <div class="form-horizontal">
     <div class="form-group">
         <label class="control-label col-md-2">List of Employees</label>
-        <div class="col-md-10">
+        <div class="col-md-10" title="Click to create employee">
             @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-sm btn-primary" })
         </div>
     </div>
@@ -78,6 +78,16 @@
         }
     </tbody>
 </table>
+                 <td title="Click to edit employee">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-sm btn-primary" })
+                            @Html.ActionLink("Details", "Details", "Employees", new { id = item.Id }, new { @class = "btn btn-sm btn-info" })
+                            <a class="btn btn-danger btn-sm delete_link" href="#" onclick="GetDeleteId(@item.Id)">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
     </div>
 </div>
 @Html.Hidden("DeleteId")

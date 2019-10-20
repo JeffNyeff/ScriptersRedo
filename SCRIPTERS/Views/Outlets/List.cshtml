@@ -14,7 +14,7 @@
 <div class="form-horizontal">
     <div class="form-group">
         <label class="control-label col-md-2">List of Outlets</label>
-        <div class="col-md-10">@Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-sm btn-primary" })</div>
+        <div class="col-md-10" title="Click to cretae new outlet">@Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-sm btn-primary" })</div>
     </div>
 </div>
 <hr />
@@ -58,9 +58,14 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.Address)
                         </td>
+
                         <td>
                             @Html.ActionLink("Edit", "Edit", new {id = item.Id}, new {@class = "btn btn-sm btn-primary"})
                             <a class="btn btn-sm btn-danger delete_link" href="#" onclick="GetDeleteId(@item.Id)">Delete</a>
+
+                        <td title="Click to edit outlet">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-sm btn-primary" })
+                            <a class="btn btn-sm btn-danger delete_link" href="#" title="Click to delete outlet" onclick="GetDeleteId(@item.Id)">Delete</a>
                         </td>
                     </tr>
                 }
