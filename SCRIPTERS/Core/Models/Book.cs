@@ -40,6 +40,9 @@ namespace SCRIPTERS.Core.Models
         public int ItemCategoryId { get; set; }
         public virtual BookCategory ItemCategory { get; set; }
 
+        public  string PersonDetails { get; set; }
+       
+
         public byte[] Image { get; set; }
 
         public virtual List<SalesDetail> SalesDetails { get; set; }

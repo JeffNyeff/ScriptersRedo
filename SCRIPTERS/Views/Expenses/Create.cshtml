@@ -5,14 +5,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@using (Html.BeginForm("Index", "Help", FormMethod.Post, new { target = "_blank", @title = "Select to get help" }))
-{
-    <p>
-        <input type="hidden" name="action" value="Welcomepage" />
-        <button type="submit" style="background:none;border:none;text-decoration:none;cursor:pointer;color:#7985d4">Help</button>
-    </p>
-}
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -25,7 +17,7 @@
             <div class="form-group">
                 @Html.Label("ItemName", "Item Name", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.DropDownList("ItemName", ViewBag.ExpenseItemId as SelectList, "Select One", htmlAttributes: new { Id = "ItemName", @class = "form-control" })
+                    @Html.DropDownList("ItemName", ViewBag.ExpenseItemId as SelectList, "Select One", htmlAttributes: new {Id= "ItemName", @class = "form-control" })
                     @Html.ValidationMessage("ItemName", "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -71,7 +63,7 @@
             <div>
                 @Html.ActionLink("Back to List", "List", "Expenses")
             </div>
-
+        
         </div>
         <div class="col-md-6">
             <div class="form-group">
@@ -98,7 +90,11 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.Total, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
+
+                    @Html.EditorFor(model => model.Total, new { htmlAttributes = new {Id= "Total", @class = "form-control" } })
+
                     @Html.EditorFor(model => model.Total, new { htmlAttributes = new { Id = "Total", @class = "form-control" , placeholder ="e.g 2000"} })
+
                     @Html.ValidationMessageFor(model => model.Total, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -120,5 +116,5 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-    <script src="~/Scripts/ProjectScripts/Expense/ExpenseCreate.js"></script>
+<script src="~/Scripts/ProjectScripts/Expense/ExpenseCreate.js"></script>
 }

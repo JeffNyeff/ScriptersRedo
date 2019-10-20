@@ -56,6 +56,9 @@
     <Reference Include="jose-jwt, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\jose-jwt.2.4.0\lib\net461\jose-jwt.dll</HintPath>
     </Reference>
+    <Reference Include="LinqToExcel, Version=2.0.0.2, Culture=neutral, PublicKeyToken=9c8ea65a58f03f1f, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqToExcel.2.0.0-PRERELEASE-2\lib\net46\LinqToExcel.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
     </Reference>
@@ -129,6 +132,9 @@
     </Reference>
     <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq, Version=2.1.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Remotion.Linq.2.1.2\lib\net45\Remotion.Linq.dll</HintPath>
     </Reference>
     <Reference Include="Rotativa, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Rotativa.1.7.3\lib\net461\Rotativa.dll</HintPath>
@@ -319,8 +325,13 @@
     <Compile Include="BLL\SupplierBll.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AuditTrailController.cs" />
+    <Compile Include="Controllers\BookPhotoController.cs" />
     <Compile Include="Controllers\BusinessRulesController.cs" />
+    <Compile Include="Controllers\CustomerPhotoController.cs" />
     <Compile Include="Controllers\EmailController.cs" />
+    <Compile Include="Controllers\ExpensePhotoController.cs" />
+    <Compile Include="Controllers\ExportController.cs" />
+    <Compile Include="Controllers\ImportController.cs" />
     <Compile Include="Controllers\HelpController.cs" />
     <Compile Include="Controllers\InventoryController.cs" />
     <Compile Include="Controllers\InventoryCategoriesController.cs" />
@@ -331,6 +342,7 @@
     <Compile Include="Controllers\ExpenseCategoriesController.cs" />
     <Compile Include="Controllers\ExpenseItemsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InventoryPhotoController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ManageUsersController.cs" />
     <Compile Include="Controllers\Operation\ExpensesController.cs" />
@@ -401,9 +413,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201910181312341_Initial-Migration.cs" />
-    <Compile Include="Migrations\201910181312341_Initial-Migration.Designer.cs">
-      <DependentUpon>201910181312341_Initial-Migration.cs</DependentUpon>
+    <Compile Include="Migrations\201910201217278_Initial-Migration.cs" />
+    <Compile Include="Migrations\201910201217278_Initial-Migration.Designer.cs">
+      <DependentUpon>201910201217278_Initial-Migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -779,10 +791,13 @@
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\Chart\exporting.js" />
+    <Content Include="Scripts\Chart\highcharts.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\ProjectScripts\Books\BookCreate.js" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
@@ -8286,10 +8301,27 @@
     <Content Include="Views\BusinessRules\Details.cshtml" />
     <Content Include="Views\BusinessRules\Edit.cshtml" />
     <Content Include="Views\BusinessRules\Index.cshtml" />
+    <Content Include="Views\BookPhoto\Index.cshtml" />
+    <Content Include="Views\BookPhoto\Changephoto.cshtml" />
+    <Content Include="Views\ExpensePhoto\Index.cshtml" />
+    <Content Include="Views\ExpensePhoto\Changephoto.cshtml" />
+    <Content Include="Views\CustomerPhoto\Index.cshtml" />
+    <Content Include="Views\CustomerPhoto\Changephoto.cshtml" />
+    <Content Include="Views\Import\Index.cshtml" />
+    <Content Include="Views\Import\UploadExcel.cshtml" />
+    <Content Include="Views\Export\ExportToXML.cshtml" />
+    <Content Include="Views\InventoryPhoto\Index.cshtml" />
+    <Content Include="Views\InventoryPhoto\Changephoto.cshtml" />
+    <Content Include="Views\Home\Charts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="BookImages\" />
     <Folder Include="Content\Out\" />
+    <Folder Include="CustomerImages\" />
+    <Folder Include="Doc\" />
+    <Folder Include="ExpenseImages\" />
+    <Folder Include="InventoryImages\" />
     <Folder Include="Views\ManageUsers\" />
   </ItemGroup>
   <ItemGroup>
@@ -8303,8 +8335,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201910181312341_Initial-Migration.resx">
-      <DependentUpon>201910181312341_Initial-Migration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201910201217278_Initial-Migration.resx">
+      <DependentUpon>201910201217278_Initial-Migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

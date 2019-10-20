@@ -12,15 +12,6 @@
         Layout = "~/Views/Shared/_Layout2.cshtml";
     }
 }
-
-@using (Html.BeginForm("Index", "Help", FormMethod.Post, new { target = "_blank", @title = "Select to get help" }))
-{
-    <p>
-        <input type="hidden" name="action" value="manageOrder" />
-        <button type="submit" style="background:none;border:none;text-decoration:none;cursor:pointer;color:#7985d4">Help</button>
-    </p>
-}
-
 <div class="form-horizontal">
     <div class="form-group">
         <label class="control-label col-md-2">List Of Orders</label>

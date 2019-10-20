@@ -26,7 +26,7 @@
             <thead>
                 <tr>
                     <th>
-                        Category Name
+                        <b>Category Name</b> 
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.Code)
@@ -38,10 +38,18 @@
                         @Html.DisplayNameFor(model => model.Description)
                     </th>
                     @*<th>
+<<<<<<< HEAD
+            @Html.DisplayNameFor(model => model.PurchaseDetails.)
+        </th>*@
+=======
                             @Html.DisplayNameFor(model => model.PurchaseDetails.)
                         </th>*@
+>>>>>>> 3872901d9dce172dd3b62c6dd196456e49309b9a
                     <th>
                         Cost Price
+                    </th>
+                    <th>
+                        Person Details
                     </th>
                     <th>
                         Sale Price
@@ -57,6 +65,31 @@
             <tbody>
                 @foreach (var item in Model)
                 {
+<<<<<<< HEAD
+                <tr id="DelRow_@item.Id">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ItemCategory.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Code)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td style="width:200px">
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CostPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PersonDetails)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SalePrice)
+                    </td>
+
+=======
                     <tr id="DelRow_@item.Id">
                         <td>
                             @Html.DisplayFor(modelItem => item.ItemCategory.Name)
@@ -76,6 +109,7 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.SalePrice)
                         </td>
+>>>>>>> 3872901d9dce172dd3b62c6dd196456e49309b9a
 
 
                         <td>

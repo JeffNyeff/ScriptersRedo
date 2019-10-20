@@ -4,13 +4,13 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@using (Html.BeginForm("Index", "Help", FormMethod.Post, new { target = "_blank", @title = "Select to get help" }))
-{
-    <p>
-        <input type="hidden" name="action" value="auditTrail" />
-        <button type="submit" style="background:none;border:none;text-decoration:none;cursor:pointer;color:#7985d4">Help</button>
-    </p>
-}
+
+
+
+
+
+
+
 
 
 
@@ -21,8 +21,13 @@
 }
 <div class="form-horizontal">
     <div class="form-group">
+
+        <label class="control-label col-md-2">Audit </label>
+      @*  <div class="col-md-10">@Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-sm btn-primary" })</div>*@
+
         <label class="control-label col-md-2" title="This is your audit trail">Audit </label>
         @*  <div class="col-md-10">@Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-sm btn-primary" })</div>*@
+
     </div>
 </div>
 <hr />
@@ -50,30 +55,30 @@
                 </tr>
             </thead>
             <tbody>
-
-                @if (Model != null)
+               
+            @if (Model != null)
+            {
+                foreach (var item in Model)
                 {
-                    foreach (var item in Model)
-                    {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.TransactionDate)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.TransactionTime)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.User)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.TransactionType)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.TransactionDetails)
-                            </td>
-                        </tr>
-                    }
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TransactionDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TransactionTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.User)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TransactionType)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TransactionDetails)
+                        </td>
+                    </tr>
                 }
+            }
             </tbody>
         </table>
     </div>

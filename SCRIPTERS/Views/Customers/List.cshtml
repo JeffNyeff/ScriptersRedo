@@ -4,6 +4,30 @@
     ViewBag.Title = "List";
 }
 
+    <div class="form-horizontal">
+        <label class="control-label col-md-3" style="font-size:17px"><b>List of Customers</b></label>
+        <div class="form-group">
+            <div class="form-group">
+                <div class="col-md-5">@Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-sm btn-primary" })</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Import Customers</label>
+            <div class="col-md-5">@Html.ActionLink("Import Excel", "Index", "Import", null, new { @class = "btn btn-sm btn-primary" })</div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Export Customers</label>
+            <div class="col-md-5">@Html.ActionLink("Export XML", "ExportToXML", "Export", null, new { @class = "btn btn-sm btn-primary" })</div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Send SMS to Customer</label>
+            <div class="col-md-10">@Html.ActionLink("Send sms", "Send", "SMS", null, new { @class = "btn btn-sm btn-primary" })</div>
+        </div>
+
+
 @using (Html.BeginForm("Index", "Help", FormMethod.Post, new { target = "_blank", @title = "Select to get help" }))
 {
     <p>
@@ -19,10 +43,15 @@
     </div>
 
     <div class="form-group">
+
+        <label class="control-label col-md-2">Send SMS to Customer</label>
+        <div class="col-md-10">@Html.ActionLink("Send sms", "Send", "SMS", null, new { @class = "btn btn-sm btn-primary" })</div>
+
+
         <label class="control-label col-md-2" title="Click to send SMS to customers">Send SMS to Customer</label>
         <div class="col-md-10" title="Click to send SMS">@Html.ActionLink("Send sms", "Send", "SMS", null, new { @class = "btn btn-sm btn-primary" })</div>
+
     </div>
-</div>
 <hr />
 <br />
 <div class="row">

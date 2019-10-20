@@ -133,6 +133,7 @@ namespace SCRIPTERS.Controllers
 
         Common _common = new Common();
         BookBll _itemBll = new BookBll();
+        
         bool status = false;
         // GET: Items
         public ActionResult List()
@@ -146,6 +147,7 @@ namespace SCRIPTERS.Controllers
         {
             ViewBag.autoCode = _itemBll.GenerateAutoCode();
             ViewBag.ItemCategoryId = _itemBll.GetItemCategory();
+            ViewBag.SupplierId = _itemBll.GetSupplier();
             ViewBag.CostPrice = "0";
             return View();
         }
