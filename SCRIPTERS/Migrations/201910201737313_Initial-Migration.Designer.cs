@@ -13,11 +13,7 @@ namespace SCRIPTERS.Migrations
         
         string IMigrationMetadata.Id
         {
-<<<<<<< HEAD:SCRIPTERS/Migrations/201910172139039_Initial-Migration.Designer.cs
-            get { return "201910172139039_Initial-Migration"; }
-=======
-            get { return "201910181312341_Initial-Migration"; }
->>>>>>> 98615e966fda9f80c1a01ef10b5c679dcbc82c76:SCRIPTERS/Migrations/201910181312341_Initial-Migration.Designer.cs
+            get { return "201910201737313_Initial-Migration"; }
         }
         
         string IMigrationMetadata.Source
