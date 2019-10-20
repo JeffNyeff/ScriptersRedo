@@ -11,11 +11,17 @@
 
     <div class="form-group">
         <label class="control-label col-md-2">Email Suppliers</label>
-<<<<<<< HEAD
-        <div class="col-md-10" title="Click to send email">@Html.ActionLink("Send Email", "Index", "Email", null, new { @class = "btn btn-sm btn-primary" })</div>
-=======
+
+
         <div class="col-md-10">@Html.ActionLink("Send Email", "Index","Email", null, new { @class = "btn btn-sm btn-primary" })</div>
->>>>>>> 6861ee168b2ed156f5b11404e306b1d4218ffe05
+
+        <div class="col-md-10" title="Click to send email">@Html.ActionLink("Send Email", "Index", "Email", null, new { @class = "btn btn-sm btn-primary" })</div>
+
+
+        <div class="col-md-10" title="Click to send email">@Html.ActionLink("Send Email", "Index", "Email", null, new { @class = "btn btn-sm btn-primary" })</div>
+
+        <div class="col-md-10">@Html.ActionLink("Send Email", "Index","Email", null, new { @class = "btn btn-sm btn-primary" })</div>
+
     </div>
 </div>
 <hr />
@@ -63,7 +69,7 @@
                         @Html.DisplayFor(modelItem => item.Name)
                     </td>
 
-<<<<<<< HEAD
+
                         <td>
                             @Html.DisplayFor(modelItem => item.ContactNo)
                         </td>
@@ -89,7 +95,7 @@
                             <a class="btn btn-danger btn-sm delete_link" href="#" title="Click to delete supplier" onclick="GetDeleteId(@item.Id)">Delete</a>
                         </td>
                     </tr>
-=======
+
                     <td>
                         @Html.DisplayFor(modelItem => item.ContactNo)
                     </td>
@@ -115,7 +121,35 @@
                         <a class="btn btn-danger btn-sm delete_link" href="#" onclick="GetDeleteId(@item.Id)">Delete</a>
                     </td>
                 </tr>
->>>>>>> 6861ee168b2ed156f5b11404e306b1d4218ffe05
+
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ContactNo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Address)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SupplierType)
+                        </td>
+                        <td>
+                            @if (item.Image != null)
+                            {
+                                string base64Image = Convert.ToBase64String(item.Image);
+                                string Image = string.Format("data:image/gif;base64,{0}", base64Image);
+                                <img src="@Image" width="100" height="100" />
+                            }
+                        </td>
+                        <td title="Click to edit supplier">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-sm btn-primary" })
+                            <a class="btn btn-danger btn-sm delete_link" href="#" title="Click to delete supplier" onclick="GetDeleteId(@item.Id)">Delete</a>
+                        </td>
+                    </tr>
+
+
                 }
             </tbody>
         </table>

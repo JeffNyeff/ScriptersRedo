@@ -107,22 +107,33 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.CusContractNo, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-<<<<<<< HEAD
-                    @Html.EditorFor(model => model.CusContractNo, new { htmlAttributes = new { @class = "form-control", placeholder = " e.g 0789696963" } })
-=======
+
+
                     @Html.EditorFor(model => model.CusContractNo, new { htmlAttributes = new { @class = "form-control" } })
->>>>>>> 6861ee168b2ed156f5b11404e306b1d4218ffe05
+
+                    @Html.EditorFor(model => model.CusContractNo, new { htmlAttributes = new { @class = "form-control", placeholder = " e.g 0789696963" } })
+
+
+                    @Html.EditorFor(model => model.CusContractNo, new { htmlAttributes = new { @class = "form-control", placeholder = " e.g 0789696963" } })
+
+                    @Html.EditorFor(model => model.CusContractNo, new { htmlAttributes = new { @class = "form-control" } })
+
                     @Html.ValidationMessageFor(model => model.CusContractNo, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group">
                 @Html.LabelFor(model => model.CusName, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-<<<<<<< HEAD
-                    @Html.EditorFor(model => model.CusName, new { htmlAttributes = new { @class = "form-control", placeholder = "e.g Hohn Whte" } })
-=======
+
+
                     @Html.EditorFor(model => model.CusName, new { htmlAttributes = new { @class = "form-control" } })
->>>>>>> 6861ee168b2ed156f5b11404e306b1d4218ffe05
+
+                    @Html.EditorFor(model => model.CusName, new { htmlAttributes = new { @class = "form-control", placeholder = "e.g Hohn Whte" } })
+
+                    @Html.EditorFor(model => model.CusName, new { htmlAttributes = new { @class = "form-control", placeholder = "e.g Hohn Whte" } })
+
+                    @Html.EditorFor(model => model.CusName, new { htmlAttributes = new { @class = "form-control" } })
+
                     @Html.ValidationMessageFor(model => model.CusName, "", new { @class = "text-danger" })
                 </div>
             </div>

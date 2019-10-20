@@ -58,15 +58,24 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.Address)
                         </td>
-<<<<<<< HEAD
-                        <td title="Click to edit outlet">
-                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-sm btn-primary" })
-                            <a class="btn btn-sm btn-danger delete_link" href="#" title="Click to delete outlet" onclick="GetDeleteId(@item.Id)">Delete</a>
-=======
+
+
                         <td>
                             @Html.ActionLink("Edit", "Edit", new {id = item.Id}, new {@class = "btn btn-sm btn-primary"})
                             <a class="btn btn-sm btn-danger delete_link" href="#" onclick="GetDeleteId(@item.Id)">Delete</a>
->>>>>>> 6861ee168b2ed156f5b11404e306b1d4218ffe05
+
+                        <td title="Click to edit outlet">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-sm btn-primary" })
+                            <a class="btn btn-sm btn-danger delete_link" href="#" title="Click to delete outlet" onclick="GetDeleteId(@item.Id)">Delete</a>
+
+                        <td title="Click to edit outlet">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-sm btn-primary" })
+                            <a class="btn btn-sm btn-danger delete_link" href="#" title="Click to delete outlet" onclick="GetDeleteId(@item.Id)">Delete</a>
+
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new {id = item.Id}, new {@class = "btn btn-sm btn-primary"})
+                            <a class="btn btn-sm btn-danger delete_link" href="#" onclick="GetDeleteId(@item.Id)">Delete</a>
+
                         </td>
                     </tr>
                 }

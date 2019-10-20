@@ -10,7 +10,9 @@
 @using (Html.BeginForm(Html.BeginForm("SendEmailView", "Email", FormMethod.Post)))
 {
     @Html.AntiForgeryToken()
-<<<<<<< HEAD
+
+
+
 
 <div class="form-horizontal">
 
@@ -21,7 +23,7 @@
         <div class="col-md-10">
             @Html.EditorFor(model => model.ToEmail, new { htmlAttributes = new { @class = "form-control", placeholder = "e.g abcd@yahoo.com" } })
             @Html.ValidationMessageFor(model => model.ToEmail, "", new { @class = "text-danger" })
-=======
+
     
     <div class="form-horizontal">
         
@@ -33,7 +35,20 @@
                 @Html.EditorFor(model => model.ToEmail, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ToEmail, "", new { @class = "text-danger" })
             </div>
->>>>>>> 6861ee168b2ed156f5b11404e306b1d4218ffe05
+
+
+
+<div class="form-horizontal">
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.ToEmail, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ToEmail, new { htmlAttributes = new { @class = "form-control", placeholder = "e.g abcd@yahoo.com" } })
+            @Html.ValidationMessageFor(model => model.ToEmail, "", new { @class = "text-danger" })
+
+
         </div>
     </div>
 

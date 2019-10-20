@@ -18,11 +18,17 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-8">
-<<<<<<< HEAD
-                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", placeholder = "e.g Prospective" } })
-=======
+
+
                             @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
->>>>>>> 6861ee168b2ed156f5b11404e306b1d4218ffe05
+                           @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", placeholder = "e.g Prospective" } })
+
+
+
+                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", placeholder = "e.g Prospective" } })
+
+                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+
                             @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -37,11 +43,19 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-8">
-<<<<<<< HEAD
-                            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control", placeholder = "e.g Books we may buy" } })
-=======
+
+
                             @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
->>>>>>> 6861ee168b2ed156f5b11404e306b1d4218ffe05
+
+                            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control", placeholder = "e.g Books we may buy" } })
+
+
+
+                            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control", placeholder = "e.g Books we may buy" } })
+
+                            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+
+
                             @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
                         </div>
                     </div>
