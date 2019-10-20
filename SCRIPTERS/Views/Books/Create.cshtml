@@ -4,6 +4,14 @@
     ViewBag.Title = "   Create";
 }
 
+@using (Html.BeginForm("Index", "Help", FormMethod.Post, new { target = "_blank", @title = "Select to get help" }))
+{
+    <p>
+        <input type="hidden" name="action" value="AddBooks" />
+        <button type="submit" style="background:none;border:none;text-decoration:none;cursor:pointer;color:#7985d4">Help</button>
+    </p>
+}
+
 @using (Html.BeginForm("Create", "Books", FormMethod.Post, new { enctype = "multipart/form-data", id = "form" }))
 {
     @Html.AntiForgeryToken()
@@ -17,7 +25,11 @@
 
                     <div class="form-group">
                         @Html.LabelFor(model => model.ItemCategoryId, "Category Name", htmlAttributes: new { @class = "control-label col-md-2" })
+<<<<<<< HEAD
                         <div id="category_prospective" class="col-md-8">
+=======
+                        <div class="col-md-8">
+>>>>>>> 3872901d9dce172dd3b62c6dd196456e49309b9a
                             @Html.DropDownListFor(model => model.ItemCategoryId, ViewBag.ItemCategoryId as SelectList, "Select One", htmlAttributes: new { @class = "form-control" })
                             @Html.ValidationMessageFor(model => model.ItemCategoryId, "", new { @class = "text-danger" })
                         </div>
@@ -95,7 +107,7 @@
     </div>
 }
 <div>
-    @Html.ActionLink("Back to List", "List","Books")
+    @Html.ActionLink("Back to List", "List", "Books")
 </div>
 
 @section Scripts {
@@ -115,7 +127,7 @@
             var image = new Image;
             reader.readAsDataURL(file);
             reader.onload = function (_file) {
-                
+
                 image.src = _file.target.result;
                 $("#TargetImage").attr("src", _file.target.result);
                 image.onload = function () {
@@ -132,10 +144,17 @@
                 }
             }
         }
+<<<<<<< HEAD
          function ShowPopUp() {
        
             window.open('/BookPhoto/Index/', "wndPopUp", 'width=850,height=800,left=100,top=100,resizable=no');
         
+=======
+        function ShowPopUp() {
+
+            window.open('/Photo/Index/', "wndPopUp", 'width=850,height=800,left=100,top=100,resizable=no');
+
+>>>>>>> 3872901d9dce172dd3b62c6dd196456e49309b9a
         }
     </script>
 }
