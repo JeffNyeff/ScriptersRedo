@@ -5,7 +5,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Calendar</h2>
+@using (Html.BeginForm("Index", "Help", FormMethod.Post, new { target = "_blank", @title = "Select to get help" }))
+{
+    <p>
+        <input type="hidden" name="action" value="Home" />
+        <button type="submit" style="background:none;border:none;text-decoration:none;cursor:pointer;color:#7985d4">Help</button>
+    </p>
+}
+
+<h2 title="Your calender events">Calendar</h2>
 <div id="calender"></div>
 
 <div id="myModal" class="modal fade" role="dialog">
@@ -43,12 +51,12 @@
                     <input type="hidden" id="hdEventID" value="0" />
                     <div class="form-group">
                         <label>Subject</label>
-                        <input type="text" id="txtSubject" class="form-control" />
+                        <input type="text" id="txtSubject" class="form-control" , placeholder="Enter event subject" />
                     </div>
                     <div class="form-group">
                         <label>Start</label>
                         <div class="input-group date" id="dtp1">
-                            <input type="text" id="txtStart" class="form-control" />
+                            <input type="text" id="txtStart" class="form-control" , placeholder="Select start date" />
                             <span class="input-group-addon">
                                 <span class="glyphicon glyphicon-calendar"></span>
                             </span>
@@ -62,7 +70,7 @@
                     <div class="form-group" id="divEndDate" style="display:none">
                         <label>End</label>
                         <div class="input-group date" id="dtp2">
-                            <input type="text" id="txtEnd" class="form-control" />
+                            <input type="text" id="txtEnd" class="form-control" , placeholder="Select end date" />
                             <span class="input-group-addon">
                                 <span class="glyphicon glyphicon-calendar"></span>
                             </span>
@@ -70,7 +78,7 @@
                     </div>
                     <div class="form-group">
                         <label>Description</label>
-                        <textarea id="txtDescription" rows="3" class="form-control"></textarea>
+                        <textarea id="txtDescription" rows="3" class="form-control" , placeholder="Enter event description"></textarea>
                     </div>
                     <div class="form-group">
                         <label>Theme Color</label>
@@ -100,7 +108,7 @@
     <script>
         $(document).ready(function () {
             var events = [];
-           
+
             var selectedEvent = null;
             FetchEventAndRenderCalendar();
             function FetchEventAndRenderCalendar() {
@@ -170,7 +178,7 @@
                         openAddEditForm();
                         $('#calendar').fullCalendar('unselect');
                     },
-                    editable: true, 
+                    editable: true,
                     eventDrop: function (event) {
                         var data = {
                             EventId: event.eventID,

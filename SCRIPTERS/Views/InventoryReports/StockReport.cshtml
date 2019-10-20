@@ -5,6 +5,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@using (Html.BeginForm("Index", "Help", FormMethod.Post, new { target = "_blank", @title = "Select to get help" }))
+{
+    <p>
+        <input type="hidden" name="action" value="Welcomepage" />
+        <button type="submit" style="background:none;border:none;text-decoration:none;cursor:pointer;color:#7985d4">Help</button>
+    </p>
+}
+
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -49,7 +57,7 @@
                     <th>
                         Stock Quantity
                     </th>
-                    
+
                 </tr>
                 @if (Model != null)
                 {
@@ -67,7 +75,7 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.StockQuantity)
                             </td>
-                           
+
                         </tr>
                     }
                 }

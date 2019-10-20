@@ -5,6 +5,14 @@
 }
 
 
+@using (Html.BeginForm("Index", "Help", FormMethod.Post, new { target = "_blank", @title = "Select to get help" }))
+{
+    <p>
+        <input type="hidden" name="action" value="Welcomepage" />
+        <button type="submit" style="background:none;border:none;text-decoration:none;cursor:pointer;color:#7985d4">Help</button>
+    </p>
+}
+
 <h4>Send SMS </h4>
 
 @using (Html.BeginForm(Html.BeginForm("Send", "SMS", FormMethod.Post)))
