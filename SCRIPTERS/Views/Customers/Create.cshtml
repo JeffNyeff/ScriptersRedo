@@ -5,14 +5,6 @@
     ViewBag.Title = "Create";
 }
 
-@using (Html.BeginForm("Index", "Help", FormMethod.Post, new { target = "_blank", @title = "Select to get help" }))
-{
-    <p>
-        <input type="hidden" name="action" value="AddCustomer" />
-        <button type="submit" style="background:none;border:none;text-decoration:none;cursor:pointer;color:#7985d4">Help</button>
-    </p>
-}
-
 @using (Html.BeginForm("Create", "Customers", FormMethod.Post, new { enctype = "multipart/form-data", id = "form" }))
 {
     @Html.AntiForgeryToken()
@@ -23,18 +15,22 @@
                     <h4 title="Add your customer here">Add a Customer</h4>
                     <hr />
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
+                  
                     <div class="form-group">
                         @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-8">
+<<<<<<< HEAD
                             @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" , placeholder ="e.g John White" }, })
+=======
+                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+>>>>>>> 6861ee168b2ed156f5b11404e306b1d4218ffe05
                             @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                         </div>
                     </div>
                     <div class="form-group">
                         @Html.LabelFor(model => model.Code, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-8">
-                            @Html.EditorFor(model => model.Code, new { htmlAttributes = new { Value = ViewBag.autoCode, @class = "form-control", @readonly = "true" } })
+                            @Html.EditorFor(model => model.Code, new { htmlAttributes = new { Value = ViewBag.autoCode, @class = "form-control", @readonly="true" } })
                             @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -62,7 +58,8 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-8">
-                            <input type="file" name="ImageFile" id="Image" />
+                            <input type="file" name="ImageFile" id="Image" /><br />
+                            <input type="button" class="btn btn-light" id="btnSave" value="Take Photo" onclick="ShowPopUp();" />
                             <br>
                             <div class="col-md-6">
                                 <div id="imagePreview" class="thumbnail" style="display:none">
@@ -127,6 +124,11 @@
                     $("#imagePreview").show();
                 }
             }
+        } 
+         function ShowPopUp() {
+       
+            window.open('/CustomerPhoto/Index/', "wndPopUp", 'width=850,height=800,left=100,top=100,resizable=no');
+        
         }
     </script>
 }

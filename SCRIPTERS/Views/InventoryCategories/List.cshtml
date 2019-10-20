@@ -3,15 +3,6 @@
 @{
     ViewBag.Title = "List";
 }
-
-@using (Html.BeginForm("Index", "Help", FormMethod.Post, new { target = "_blank", @title = "Select to get help" }))
-{
-    <p>
-        <input type="hidden" name="action" value="ManageInventoryCat" />
-        <button type="submit" style="background:none;border:none;text-decoration:none;cursor:pointer;color:#7985d4">Help</button>
-    </p>
-}
-
 <div class="form-horizontal">
     <div class="form-group">
         <label class="control-label col-md-2" title="Your list of inventory categories">List Of Inventory Categories</label>

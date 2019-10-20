@@ -39,8 +39,8 @@
                 <th>Sl</th>
                 <th>Item</th>
                 <th>Quantity</th>
-                <th>Price R</th>
-                <th>Line Price R</th>
+                <th>Price</th>
+                <th>Line Price</th>
             </tr>
             @{ int sl = 1;}
             @foreach (var item in Model.SalesDetails)
@@ -65,23 +65,23 @@
     <div class="col-md-4" style="float:right">
         <table>
             <tr>
-                <td>@Html.DisplayNameFor(model => model.SubTotal) R</td>
+                <td>@Html.DisplayNameFor(model => model.SubTotal) :</td>
                 <td>&nbsp; @Html.DisplayFor(model => model.SubTotal)</td>
             </tr>
             <tr>
-                <td>@Html.DisplayNameFor(model => model.Vat) </td>
+                <td>@Html.DisplayNameFor(model => model.Vat) :</td>
                 <td>&nbsp;@Html.DisplayFor(model => model.Vat)</td>
             </tr>
             <tr>
-                <td> @Html.DisplayNameFor(model => model.Discount) R</td>
+                <td> @Html.DisplayNameFor(model => model.Discount) :</td>
                 <td>&nbsp;@Html.DisplayFor(model => model.Discount)</td>
             </tr>
             <tr>
-                <td> @Html.DisplayNameFor(model => model.Total) R</td>
+                <td> @Html.DisplayNameFor(model => model.Total) :</td>
                 <td>&nbsp;@Html.DisplayFor(model => model.Total)</td>
             </tr>
             <tr>
-                <td> Total Due R</td>
+                <td> @Html.DisplayNameFor(model => model.DueAmount) :</td>
                 <td>&nbsp; @Html.DisplayFor(model => model.DueAmount)</td>
             </tr>
         </table>

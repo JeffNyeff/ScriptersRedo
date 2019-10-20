@@ -4,20 +4,12 @@
     ViewBag.Title = "Create";
 }
 
-@using (Html.BeginForm("Index", "Help", FormMethod.Post, new { target = "_blank", @title = "Select to get help" }))
-{
-    <p>
-        <input type="hidden" name="action" value="Welcomepage" />
-        <button type="submit" style="background:none;border:none;text-decoration:none;cursor:pointer;color:#7985d4">Help</button>
-    </p>
-}
-
 <h2>Create</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
-
+    
     <div class="form-horizontal">
         <h4>BusinessRule</h4>
         <hr />
