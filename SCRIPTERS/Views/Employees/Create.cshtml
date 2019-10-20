@@ -20,13 +20,13 @@
     <div class="row">
         <div class="col-md-offset-2">
             <div class="col-md-10">
-                <h4>Add An Employee</h4>
+                <h4 title="Add employee details">Add An Employee</h4>
                 <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="nav-tabs-custom">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#Official" data-toggle="tab">Official</a></li>
-                        <li><a href="#Personal" data-toggle="tab">Personal</a></li>
+                        <li class="active"><a href="#Official" data-toggle="tab" title="Enter official details">Official</a></li>
+                        <li><a href="#Personal" data-toggle="tab" title="Enter personal information">Personal</a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="active tab-pane" id="Official">
@@ -35,7 +35,7 @@
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
                                     <div class="col-md-8">
-                                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control",placeholder="e.g William Tandwe" } })
                                         @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
@@ -56,15 +56,15 @@
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.JoiningDate, htmlAttributes: new { @class = "control-label col-md-2" })
                                     <div class="col-md-8">
-                                        @Html.EditorFor(model => model.JoiningDate, new { htmlAttributes = new { @Id = "JoiningDate", @class = "form-control" } })
+                                        @Html.EditorFor(model => model.JoiningDate, new { htmlAttributes = new { @Id = "JoiningDate", @class = "form-control" , placeholder="Select start date"} })
                                         @Html.ValidationMessageFor(model => model.JoiningDate, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" >
                                     @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
                                     <div class="col-md-8">
                                         <input type="file" class="btn btn-light" name="ImageFile" id="Image" />
-                                        <input type="button" class="btn btn-light" id="btnSave" value="Take Photo" onclick="ShowPopUp();" />
+                                        <input type="button" class="btn btn-light" id="btnSave" title="Click to take photo" value="Take Photo" onclick="ShowPopUp();" />
                                         <br>
                                         <div class="col-md-6">
                                             <div id="imagePreview" class="thumbnail" style="display:none">
@@ -80,14 +80,14 @@
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.ContactNo, htmlAttributes: new { @class = "control-label col-md-2" })
                                     <div class="col-md-8">
-                                        @Html.EditorFor(model => model.ContactNo, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.EditorFor(model => model.ContactNo, new { htmlAttributes = new { @class = "form-control" ,placeholder="e.g 0789455356"} })
                                         @Html.ValidationMessageFor(model => model.ContactNo, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
                                     <div class="col-md-8">
-                                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder="e.g joy@gmail.com" } })
                                         @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
@@ -107,42 +107,42 @@
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.EmerContactNo, htmlAttributes: new { @class = "control-label col-md-2" })
                                     <div class="col-md-8">
-                                        @Html.EditorFor(model => model.EmerContactNo, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.EditorFor(model => model.EmerContactNo, new { htmlAttributes = new { @class = "form-control", placeholder="e.g 0784568956" } })
                                         @Html.ValidationMessageFor(model => model.EmerContactNo, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.NationalId, htmlAttributes: new { @class = "control-label col-md-2" })
                                     <div class="col-md-8">
-                                        @Html.EditorFor(model => model.NationalId, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.EditorFor(model => model.NationalId, new { htmlAttributes = new { @class = "form-control" , placeholder = "e.g 1989121245789"} })
                                         @Html.ValidationMessageFor(model => model.NationalId, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.FathersName, htmlAttributes: new { @class = "control-label col-md-2" })
                                     <div class="col-md-8">
-                                        @Html.EditorFor(model => model.FathersName, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.EditorFor(model => model.FathersName, new { htmlAttributes = new { @class = "form-control" , placeholder="Hector Whie"} })
                                         @Html.ValidationMessageFor(model => model.FathersName, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.MothersName, htmlAttributes: new { @class = "control-label col-md-2" })
                                     <div class="col-md-8">
-                                        @Html.EditorFor(model => model.MothersName, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.EditorFor(model => model.MothersName, new { htmlAttributes = new { @class = "form-control",placeholder="Joy Whit" } })
                                         @Html.ValidationMessageFor(model => model.MothersName, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.PresentAddress, htmlAttributes: new { @class = "control-label col-md-2" })
                                     <div class="col-md-8">
-                                        @Html.EditorFor(model => model.PresentAddress, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.EditorFor(model => model.PresentAddress, new { htmlAttributes = new { @class = "form-control" , placeholder="123 xys Street"} })
                                         @Html.ValidationMessageFor(model => model.PresentAddress, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.PermanentAddress, htmlAttributes: new { @class = "control-label col-md-2" })
                                     <div class="col-md-8">
-                                        @Html.EditorFor(model => model.PermanentAddress, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.EditorFor(model => model.PermanentAddress, new { htmlAttributes = new { @class = "form-control" ,placeholder="123 xys Street"} })
                                         @Html.ValidationMessageFor(model => model.PermanentAddress, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
@@ -155,7 +155,7 @@
                 <!-- /.nav-tabs-custom -->
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-8">
-                        <input type="submit" value="Create" class="btn btn-success" />
+                        <input type="submit" title="Click to create employee" value="Create" class="btn btn-success" />
                     </div>
                     @if (ViewBag.Message != null)
                     {
@@ -219,9 +219,15 @@
             }
         }
         function ShowPopUp() {
+<<<<<<< HEAD
+       
+            window.open('/Photo/Index/', "wndPopUp", 'width=850,height=800,left=100,top=100,resizable=no');
+        
+=======
 
             window.open('/Photo/Index/', "wndPopUp", 'width=720,height=400,left=100,top=100,resizable=no');
 
+>>>>>>> 3872901d9dce172dd3b62c6dd196456e49309b9a
         }
     </script>
 }

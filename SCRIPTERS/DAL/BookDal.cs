@@ -47,6 +47,14 @@ namespace SCRIPTERS.DAL
             return bookCategory;
         }
 
+        internal object GetSuppliers()
+        {
+            var supplier = new SelectList(db.Suppliers, "Id", "Name");
+            return supplier;
+        }
+
+
+
         internal Book GetById(int? id)
         {
             Book book = db.Books.FirstOrDefault(m => m.Id == id);

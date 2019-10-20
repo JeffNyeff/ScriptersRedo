@@ -12,15 +12,6 @@
         Layout = "~/Views/Shared/_Layout2.cshtml";
     }
 }
-
-@using (Html.BeginForm("Index", "Help", FormMethod.Post, new { target = "_blank", @title = "Select to get help" }))
-{
-    <p>
-        <input type="hidden" name="action" value="manageOrder" />
-        <button type="submit" style="background:none;border:none;text-decoration:none;cursor:pointer;color:#7985d4">Help</button>
-    </p>
-}
-
 <div class="form-horizontal">
     <div class="form-group">
         <label class="control-label col-md-2">List Of Orders</label>
@@ -90,9 +81,9 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.DueAmount)
                         </td>
-                        <td>
+                        <td title="Click to view order details">
                             @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-sm btn-info" })
-                            <a class="btn btn-sm btn-danger delete_link" href="#" onclick="GetDeleteId(@item.Id)">Remove</a>
+                            <a class="btn btn-sm btn-danger delete_link" href="#" title="Click to delete" onclick="GetDeleteId(@item.Id)">Remove</a>
                         </td>
                     </tr>
                 }

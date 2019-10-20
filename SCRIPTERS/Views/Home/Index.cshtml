@@ -5,15 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@using (Html.BeginForm("Index", "Help", FormMethod.Post, new { target = "_blank", @title = "Select to get help" }))
-{
-    <p>
-        <input type="hidden" name="action" value="Home" />
-        <button type="submit" style="background:none;border:none;text-decoration:none;cursor:pointer;color:#7985d4">Help</button>
-    </p>
-}
-
-<h2 title="Your calender events">Calendar</h2>
+<h2>Calendar</h2>
 <div id="calender"></div>
 
 <div id="myModal" class="modal fade" role="dialog">
@@ -44,19 +36,19 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Save Event</h4>
+                <h4 class="modal-title" title="Click to save event">Save Event</h4>
             </div>
             <div class="modal-body">
                 <form class="col-md-12 form-horizontal">
                     <input type="hidden" id="hdEventID" value="0" />
                     <div class="form-group">
                         <label>Subject</label>
-                        <input type="text" id="txtSubject" class="form-control" , placeholder="Enter event subject" />
+                        <input type="text" id="txtSubject" class="form-control" />
                     </div>
                     <div class="form-group">
                         <label>Start</label>
                         <div class="input-group date" id="dtp1">
-                            <input type="text" id="txtStart" class="form-control" , placeholder="Select start date" />
+                            <input type="text" id="txtStart" class="form-control" />
                             <span class="input-group-addon">
                                 <span class="glyphicon glyphicon-calendar"></span>
                             </span>
@@ -70,7 +62,7 @@
                     <div class="form-group" id="divEndDate" style="display:none">
                         <label>End</label>
                         <div class="input-group date" id="dtp2">
-                            <input type="text" id="txtEnd" class="form-control" , placeholder="Select end date" />
+                            <input type="text" id="txtEnd" class="form-control" />
                             <span class="input-group-addon">
                                 <span class="glyphicon glyphicon-calendar"></span>
                             </span>
@@ -78,7 +70,7 @@
                     </div>
                     <div class="form-group">
                         <label>Description</label>
-                        <textarea id="txtDescription" rows="3" class="form-control" , placeholder="Enter event description"></textarea>
+                        <textarea id="txtDescription" rows="3" class="form-control"></textarea>
                     </div>
                     <div class="form-group">
                         <label>Theme Color</label>
@@ -108,7 +100,7 @@
     <script>
         $(document).ready(function () {
             var events = [];
-
+           
             var selectedEvent = null;
             FetchEventAndRenderCalendar();
             function FetchEventAndRenderCalendar() {
@@ -178,7 +170,7 @@
                         openAddEditForm();
                         $('#calendar').fullCalendar('unselect');
                     },
-                    editable: true,
+                    editable: true, 
                     eventDrop: function (event) {
                         var data = {
                             EventId: event.eventID,
@@ -303,5 +295,85 @@
     </script>
 }
 
+<script src="~/Scripts/Chart/exporting.js"></script>
+<script src="~/Scripts/Chart/highcharts.js"></script>
+<div class="jumbotron">
+    <div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
 
+</div>
 
+<div class="jumbotron">
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+    <div id="container"></div>
+</div>
+
+<script>
+    Highcharts.chart('container', {
+
+        title: {
+            text: 'The Book Market Projected Growth Rate, 2020-2025'
+        },
+
+        subtitle: {
+            text: 'Source: theBookMarket.co.za'
+        },
+
+        yAxis: {
+            title: {
+            //    text: 'Number of Employees'
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+        },
+
+        plotOptions: {
+            series: {
+                label: {
+                    connectorAllowed: false
+                },
+                pointStart: 2010
+            }
+        },
+
+        series: [{
+            name: 'Customers',
+            data: [1560, 2310, 3100, 4320, 4890, 5321, 5890, 6492]
+        }, {
+            name: 'Book Purchases',
+            data: [245, 345, 560, 750, 1203, 1679, 2340, 2920]
+        }, {
+            name: 'Sales',
+            data: [1174, 1772, 2590, 3560, 4120, 4789, 5123, 5689]
+        }, {
+            name: 'Book Requests',
+            data: [390, 670, 798, 1216, 1511, 2245, 3440, 3422]
+        }, {
+            name: ' Inventory',
+            data: [2812, 3214, 3890, 4579, 5362, 6201, 7393, 8321]
+        }],
+
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    legend: {
+                        layout: 'horizontal',
+                        align: 'center',
+                        verticalAlign: 'bottom'
+                    }
+                }
+            }]
+        }
+
+    });
+</script>

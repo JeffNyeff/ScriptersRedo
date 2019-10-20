@@ -14,8 +14,8 @@
 
 <div class="form-horizontal">
     <div class="form-group">
-        <label class="control-label col-md-2">List Of Books</label>
-        <div class="col-md-10">@Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-sm btn-primary" })</div>
+        <label class="control-label col-md-2" title="This is your list of books">List Of Books</label>
+        <div class="col-md-10" title="Click to add new book">@Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-sm btn-primary" })</div>
     </div>
 </div>
 <hr />
@@ -26,7 +26,7 @@
             <thead>
                 <tr>
                     <th>
-                        Category Name
+                        <b>Category Name</b> 
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.Code)
@@ -38,10 +38,18 @@
                         @Html.DisplayNameFor(model => model.Description)
                     </th>
                     @*<th>
+<<<<<<< HEAD
+            @Html.DisplayNameFor(model => model.PurchaseDetails.)
+        </th>*@
+=======
                             @Html.DisplayNameFor(model => model.PurchaseDetails.)
                         </th>*@
+>>>>>>> 3872901d9dce172dd3b62c6dd196456e49309b9a
                     <th>
                         Cost Price
+                    </th>
+                    <th>
+                        Person Details
                     </th>
                     <th>
                         Sale Price
@@ -57,6 +65,31 @@
             <tbody>
                 @foreach (var item in Model)
                 {
+<<<<<<< HEAD
+                <tr id="DelRow_@item.Id">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ItemCategory.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Code)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td style="width:200px">
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CostPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PersonDetails)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SalePrice)
+                    </td>
+
+=======
                     <tr id="DelRow_@item.Id">
                         <td>
                             @Html.DisplayFor(modelItem => item.ItemCategory.Name)
@@ -76,6 +109,7 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.SalePrice)
                         </td>
+>>>>>>> 3872901d9dce172dd3b62c6dd196456e49309b9a
 
 
                         <td>
@@ -86,9 +120,9 @@
                                 <img src="@Image" width="100" height="100" />
                             }
                         </td>
-                        <td>
+                        <td title="Click tot edit book">
                             @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-sm btn-primary" })
-                            <a class="btn btn-sm btn-danger delete_link" href="#" onclick="GetDeleteId(@item.Id)">Delete</a>
+                            <a class="btn btn-sm btn-danger delete_link" href="#" title="Click to delete book" onclick="GetDeleteId(@item.Id)">Delete</a>
                         </td>
                     </tr>
                 }

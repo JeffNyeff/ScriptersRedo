@@ -5,14 +5,6 @@
     ViewBag.Title = "Create";
 }
 
-@using (Html.BeginForm("Index", "Help", FormMethod.Post, new { target = "_blank", @title = "Select to get help" }))
-{
-    <p>
-        <input type="hidden" name="action" value="AddCustomer" />
-        <button type="submit" style="background:none;border:none;text-decoration:none;cursor:pointer;color:#7985d4">Help</button>
-    </p>
-}
-
 @using (Html.BeginForm("Create", "Customers", FormMethod.Post, new { enctype = "multipart/form-data", id = "form" }))
 {
     @Html.AntiForgeryToken()
@@ -20,49 +12,62 @@
         <div class="col-md-offset-2">
             <div class="col-md-10">
                 <div class="form-horizontal">
-                    <h4>Add a Customer</h4>
+                    <h4 title="Add your customer here">Add a Customer</h4>
                     <hr />
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
+                  
                     <div class="form-group">
                         @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-8">
-                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" }, })
+
+
+                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+
+                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" , placeholder ="e.g John White" }, })
+
+
+
+                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" , placeholder ="e.g John White" }, })
+
+                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+
+
                             @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                         </div>
                     </div>
                     <div class="form-group">
                         @Html.LabelFor(model => model.Code, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-8">
-                            @Html.EditorFor(model => model.Code, new { htmlAttributes = new { Value = ViewBag.autoCode, @class = "form-control", @readonly = "true" } })
+                            @Html.EditorFor(model => model.Code, new { htmlAttributes = new { Value = ViewBag.autoCode, @class = "form-control", @readonly="true" } })
                             @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
                         </div>
                     </div>
                     <div class="form-group">
                         @Html.LabelFor(model => model.ContactNo, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-8">
-                            @Html.EditorFor(model => model.ContactNo, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.EditorFor(model => model.ContactNo, new { htmlAttributes = new { @class = "form-control" ,placeholder="e.g 0781650151"} })
                             @Html.ValidationMessageFor(model => model.ContactNo, "", new { @class = "text-danger" })
                         </div>
                     </div>
                     <div class="form-group">
                         @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-8">
-                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" , placeholder="e.g xyz@gmail.com"} })
                             @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                         </div>
                     </div>
                     <div class="form-group">
                         @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-8">
-                            @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" ,placeholder="xyx Street"} })
                             @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
                         </div>
                     </div>
                     <div class="form-group">
                         @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-8">
-                            <input type="file" name="ImageFile" id="Image" />
+                            <input type="file" name="ImageFile" id="Image" /><br />
+                            <input type="button" class="btn btn-light" id="btnSave" value="Take Photo" onclick="ShowPopUp();" />
                             <br>
                             <div class="col-md-6">
                                 <div id="imagePreview" class="thumbnail" style="display:none">
@@ -77,7 +82,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-8">
-                            <input type="submit" value="Create" class="btn btn-success" />
+                            <input type="submit" title="Click to add customer" value="Create" class="btn btn-success" />
                         </div>
                         @if (ViewBag.Message != null)
                         {
@@ -127,6 +132,11 @@
                     $("#imagePreview").show();
                 }
             }
+        } 
+         function ShowPopUp() {
+       
+            window.open('/CustomerPhoto/Index/', "wndPopUp", 'width=850,height=800,left=100,top=100,resizable=no');
+        
         }
     </script>
 }
