@@ -401,9 +401,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201910181312341_Initial-Migration.cs" />
-    <Compile Include="Migrations\201910181312341_Initial-Migration.Designer.cs">
-      <DependentUpon>201910181312341_Initial-Migration.cs</DependentUpon>
+    <Compile Include="Migrations\201910201127130_Initial-Migration.cs" />
+    <Compile Include="Migrations\201910201127130_Initial-Migration.Designer.cs">
+      <DependentUpon>201910201127130_Initial-Migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -779,6 +779,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\Chart\exporting.js" />
+    <Content Include="Scripts\Chart\highcharts.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
@@ -8303,8 +8305,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201910181312341_Initial-Migration.resx">
-      <DependentUpon>201910181312341_Initial-Migration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201910201127130_Initial-Migration.resx">
+      <DependentUpon>201910201127130_Initial-Migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

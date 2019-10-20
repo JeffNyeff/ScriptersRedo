@@ -5,12 +5,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.IO;
+
 
 namespace SCRIPTERS.Controllers
 {
     //[Authorize]
     public class HomeController : Controller
     {
+        ApplicationDbContext context = new ApplicationDbContext();
         public ActionResult Index()
         {
             return View();
@@ -20,9 +23,49 @@ namespace SCRIPTERS.Controllers
             return View();
                  
         }
+
         public ActionResult About()
         {
             return View();
+        }
+
+        public ActionResult GetData()
+        {
+            int book = context.Inventories.Where(x => x.ItemCategoryId == 6).Count();
+            int stationery = context.Inventories.Where(x => x.ItemCategoryId == 4).Count();
+            int accessories = context.Inventories.Where(x => x.ItemCategoryId == 3).Count();
+            //int tap_to_pay = context.Inventory_Type.Where(x => x.InventoryType_Name == "Tap-to-pay").Count();
+            Ratio obj = new Ratio();
+            obj.Book = book;
+            obj.Stationery = stationery;
+            obj.Accessories = accessories;
+            //obj.Tap_to_pay = tap_to_pay;
+
+
+
+            return Json(obj, JsonRequestBehavior.AllowGet);
+        }
+
+        public Ratio PiechartValues()
+        {
+
+            int book = context.Inventories.Where(x => x.ItemCategoryId == 8).Count();
+            int stationery = context.Inventories.Where(x => x.ItemCategoryId == 4).Count();
+            int accessories = context.Inventories.Where(x => x.ItemCategoryId == 3).Count();
+            //int tap_to_pay = context.Inventory_Type.Where(x => x.InventoryType_Name == "Tap-to-pay").Count();
+            Ratio obj = new Ratio();
+            obj.Book = book;
+            obj.Stationery = stationery;
+            obj.Accessories = accessories;
+
+            return obj;
+        }
+        public class Ratio
+        {
+            public int Book { get; set; }
+            public int Stationery { get; set; }
+            public int Accessories { get; set; }
+            //public int Tap_to_pay { get; set; }
         }
 
         [HttpGet]
