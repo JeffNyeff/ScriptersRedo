@@ -14,13 +14,13 @@
 
 <div class="form-horizontal">
     <div class="form-group">
-        <label class="control-label col-md-2">List of Customers</label>
-        <div class="col-md-10">@Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-sm btn-primary" })</div>
+        <label class="control-label col-md-2" title="Your list of customers">List of Customers</label>
+        <div class="col-md-10" title="Click to create new customer">@Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-sm btn-primary" })</div>
     </div>
 
     <div class="form-group">
-        <label class="control-label col-md-2">Send SMS to Customer</label>
-        <div class="col-md-10">@Html.ActionLink("Send sms", "Send", "SMS", null, new { @class = "btn btn-sm btn-primary" })</div>
+        <label class="control-label col-md-2" title="Click to send SMS to customers">Send SMS to Customer</label>
+        <div class="col-md-10" title="Click to send SMS">@Html.ActionLink("Send sms", "Send", "SMS", null, new { @class = "btn btn-sm btn-primary" })</div>
     </div>
 </div>
 <hr />
@@ -83,7 +83,7 @@
                                 <img src="@Image" width="100" height="100" />
                             }
                         </td>
-                        <td>
+                        <td title="Click to edit customer">
                             @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-sm btn-primary" })
                             <a class="btn btn-danger btn-sm delete_link" href="#" onclick="GetDeleteId(@item.Id)">Delete</a>
                         </td>
@@ -101,7 +101,7 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <button type="button" title="Click to delete customer" class="close" data-dismiss="modal">&times;</button>
 
                 <h3 class="modal-title">Confirm to Delete</h3>
             </div>

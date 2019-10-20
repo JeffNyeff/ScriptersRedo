@@ -22,7 +22,7 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-        <div class="form-group">
+        <div class="form-group" >
             @Html.Label("Name", "Role Title", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(m => m.Name)
@@ -31,7 +31,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create Role" class="btn btn-success" />
+                <input type="submit" title="Click to create user role" value="Create Role" class="btn btn-success" />
             </div>
         </div>
 

@@ -32,27 +32,27 @@
             <div class="form-group">
                 @Html.Label("ItemQuantity", "Quantity", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.Editor("ItemQuantity", new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.Editor("ItemQuantity", new { htmlAttributes = new { @class = "form-control", placeholder="e.g 2" } })
                     @Html.ValidationMessage("ItemQuantity", "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group">
                 @Html.Label("ExpenseDes", "Description", htmlAttributes: new { @class = "control-label col-md-2 " })
                 <div class="col-md-10">
-                    @Html.TextArea("ExpenseDes", null, new { @class = "form-control" })
+                    @Html.TextArea("ExpenseDes", null, new { @class = "form-control" ,placeholder="Repairs after a storm"})
                     @Html.ValidationMessage("ExpenseDes", "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group">
                 @Html.Label("ExpenseAmount", "Amount", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.Editor("ExpenseAmount", new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.Editor("ExpenseAmount", new { htmlAttributes = new { @class = "form-control",placeholder="e.g 2000" } })
                     @Html.ValidationMessage("ExpenseAmount", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <a href="#" id="AddButton" class="btn btn-info">Add</a>
+                    <a href="#" id="AddButton" class="btn btn-info" title="Click to add expense">Add</a>
                 </div>
             </div>
             <table class=" table table-responsive table-striped table-bordered table-hover table-condensed" id="Details">
@@ -61,7 +61,7 @@
                         <td>SL</td>
                         <td>Expense Item</td>
                         <td>Quantity</td>
-                        <td>Amount</td>
+                        <td>Amount (R)</td>
                         <td>Line Total</td>
                         <td>Action</td>
                     </tr>
@@ -91,27 +91,27 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.ExpenseDate, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.ExpenseDate, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.ExpenseDate, new { htmlAttributes = new { @class = "form-control" ,placeholder="Select expense date "} })
                     @Html.ValidationMessageFor(model => model.ExpenseDate, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group">
                 @Html.LabelFor(model => model.Total, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.Total, new { htmlAttributes = new { Id = "Total", @class = "form-control" } })
+                    @Html.EditorFor(model => model.Total, new { htmlAttributes = new { Id = "Total", @class = "form-control" , placeholder ="e.g 2000"} })
                     @Html.ValidationMessageFor(model => model.Total, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group">
                 @Html.LabelFor(model => model.Due, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.Due, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.Due, new { htmlAttributes = new { @class = "form-control",placeholder="e.g 2000" } })
                     @Html.ValidationMessageFor(model => model.Due, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Save" class="btn btn-success" />
+                    <input type="submit"  title="Click to save expense" value="Save" class="btn btn-success" />
                 </div>
             </div>
         </div>

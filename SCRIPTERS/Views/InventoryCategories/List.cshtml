@@ -14,8 +14,8 @@
 
 <div class="form-horizontal">
     <div class="form-group">
-        <label class="control-label col-md-2">List Of Inventory Categories</label>
-        <div class="col-md-10">@Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-sm btn-primary" })</div>
+        <label class="control-label col-md-2" title="Your list of inventory categories">List Of Inventory Categories</label>
+        <div class="col-md-10" title="Click to create new inventory category">@Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-sm btn-primary" })</div>
     </div>
 </div>
 <hr />
@@ -60,9 +60,9 @@
                         </td>
 
 
-                        <td>
+                        <td title="Click button to edit">
                             @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-sm btn-primary" })
-                            <a class="btn btn-sm btn-danger delete_link" href="#" onclick="GetDeleteId(@item.Id)">Delete</a>
+                            <a class="btn btn-sm btn-danger delete_link" href="#" title="Click to delete invententory category" onclick="GetDeleteId(@item.Id)">Delete</a>
                         </td>
                     </tr>
                 }

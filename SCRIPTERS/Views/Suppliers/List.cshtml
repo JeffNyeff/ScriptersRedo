@@ -15,12 +15,12 @@
 <div class="form-horizontal">
     <div class="form-group">
         <label class="control-label col-md-2">List of Suppliers</label>
-        <div class="col-md-10">@Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-sm btn-primary" })</div>
+        <div class="col-md-10" title="Click to create new supplier">@Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-sm btn-primary" })</div>
     </div>
 
     <div class="form-group">
         <label class="control-label col-md-2">Email Suppliers</label>
-        <div class="col-md-10">@Html.ActionLink("Send Email", "Index", "Email", null, new { @class = "btn btn-sm btn-primary" })</div>
+        <div class="col-md-10" title="Click to send email">@Html.ActionLink("Send Email", "Index", "Email", null, new { @class = "btn btn-sm btn-primary" })</div>
     </div>
 </div>
 <hr />
@@ -88,9 +88,9 @@
                                 <img src="@Image" width="100" height="100" />
                             }
                         </td>
-                        <td>
+                        <td title="Click to edit supplier">
                             @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-sm btn-primary" })
-                            <a class="btn btn-danger btn-sm delete_link" href="#" onclick="GetDeleteId(@item.Id)">Delete</a>
+                            <a class="btn btn-danger btn-sm delete_link" href="#" title="Click to delete supplier" onclick="GetDeleteId(@item.Id)">Delete</a>
                         </td>
                     </tr>
                 }

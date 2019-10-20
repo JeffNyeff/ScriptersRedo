@@ -33,7 +33,7 @@
                 <div class="form-group">
                     @Html.Label("Code", "Sale Code", htmlAttributes: new { @class = "control-label col-md-3" })
                     <div class="col-md-9">
-                        @Html.Editor("Code", new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.Editor("Code", new { htmlAttributes = new { @class = "form-control",placeholder="Enter sale code" } })
                         @Html.ValidationMessage("Code", "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -42,20 +42,20 @@
                 <div class="form-group">
                     @Html.Label("FromDate", "From Date", htmlAttributes: new { @class = "control-label col-md-3" })
                     <div class="col-md-9">
-                        @Html.Editor("FromDate", new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.Editor("FromDate", new { htmlAttributes = new { @class = "form-control",placeholder="Select from date" } })
                         @Html.ValidationMessage("FromDate", "", new { @class = "text-danger" })
                     </div>
                 </div>
                 <div class="form-group">
                     @Html.Label("ToDate", "To Date", htmlAttributes: new { @class = "control-label col-md-3" })
                     <div class="col-md-9">
-                        @Html.Editor("ToDate", new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.Editor("ToDate", new { htmlAttributes = new { @class = "form-control",placeholder="Select to date" } })
                         @Html.ValidationMessage("ToDate", "", new { @class = "text-danger" })
                     </div>
                 </div>
             </div>
             <div class="col-md-offset-10 col-md-2">
-                <input type="submit" name="Show" id="ShowButton" value="View Report" class="btn btn-primary" />
+                <input type="submit" name="Show" id="ShowButton" title="Click to view report" value="View Report" class="btn btn-primary" />
             </div>
         </div>
     </div>
