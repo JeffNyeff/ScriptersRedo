@@ -8112,6 +8112,7 @@
     <Content Include="Views\Export\ExportToXML.cshtml" />
     <Content Include="Views\InventoryPhoto\Index.cshtml" />
     <Content Include="Views\InventoryPhoto\Changephoto.cshtml" />
+    <Content Include="Views\Home\Charts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
