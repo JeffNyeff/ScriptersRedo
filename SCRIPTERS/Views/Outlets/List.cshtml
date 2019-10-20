@@ -59,6 +59,7 @@
                             @Html.DisplayFor(modelItem => item.Address)
                         </td>
 
+
                         <td>
                             @Html.ActionLink("Edit", "Edit", new {id = item.Id}, new {@class = "btn btn-sm btn-primary"})
                             <a class="btn btn-sm btn-danger delete_link" href="#" onclick="GetDeleteId(@item.Id)">Delete</a>
@@ -66,6 +67,15 @@
                         <td title="Click to edit outlet">
                             @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-sm btn-primary" })
                             <a class="btn btn-sm btn-danger delete_link" href="#" title="Click to delete outlet" onclick="GetDeleteId(@item.Id)">Delete</a>
+
+                        <td title="Click to edit outlet">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-sm btn-primary" })
+                            <a class="btn btn-sm btn-danger delete_link" href="#" title="Click to delete outlet" onclick="GetDeleteId(@item.Id)">Delete</a>
+
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new {id = item.Id}, new {@class = "btn btn-sm btn-primary"})
+                            <a class="btn btn-sm btn-danger delete_link" href="#" onclick="GetDeleteId(@item.Id)">Delete</a>
+
                         </td>
                     </tr>
                 }

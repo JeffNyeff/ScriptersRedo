@@ -91,9 +91,15 @@
                 @Html.LabelFor(model => model.Total, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
 
+
                     @Html.EditorFor(model => model.Total, new { htmlAttributes = new {Id= "Total", @class = "form-control" } })
 
                     @Html.EditorFor(model => model.Total, new { htmlAttributes = new { Id = "Total", @class = "form-control" , placeholder ="e.g 2000"} })
+
+
+                    @Html.EditorFor(model => model.Total, new { htmlAttributes = new { Id = "Total", @class = "form-control" , placeholder ="e.g 2000"} })
+
+                    @Html.EditorFor(model => model.Total, new { htmlAttributes = new {Id= "Total", @class = "form-control" } })
 
                     @Html.ValidationMessageFor(model => model.Total, "", new { @class = "text-danger" })
                 </div>

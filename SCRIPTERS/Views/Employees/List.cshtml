@@ -69,6 +69,17 @@
                     }
                 </td>
 
+
+                        <td title="Click to edit employee">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-sm btn-primary" })
+                            @Html.ActionLink("Details", "Details", "Employees", new { id = item.Id }, new { @class = "btn btn-sm btn-info" })
+                            <a class="btn btn-danger btn-sm delete_link" href="#" onclick="GetDeleteId(@item.Id)">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.Id}, new { @class = "btn btn-sm btn-primary" } ) 
                     @Html.ActionLink("Details", "Details","Employees", new { id = item.Id }, new { @class = "btn btn-sm btn-info" }) 
@@ -78,6 +89,7 @@
         }
     </tbody>
 </table>
+
                  <td title="Click to edit employee">
                             @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-sm btn-primary" })
                             @Html.ActionLink("Details", "Details", "Employees", new { id = item.Id }, new { @class = "btn btn-sm btn-info" })
@@ -87,6 +99,8 @@
                 }
             </tbody>
         </table>
+
+
 
     </div>
 </div>
